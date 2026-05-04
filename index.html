@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夜になると胸の真ん中が重くなる、あなたへ。｜ことは</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --bg-sub: #f3efe8;
+    --text-main: #2d2a26;
+    --text-sub: #5c5650;
+    --text-mute: #9a9189;
+    --gold: #b89455;
+    --purple: #6b4e8d;
+    --gold-pale: #e8dcc4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: "Noto Sans JP", -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.95;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--gold);
+    z-index: 100;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 72px 24px 96px;
+    text-align: center;
+  }
+
+  .brand-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 48px;
+    padding-left: 0.45em;
+  }
+
+  .moon-deco {
+    margin: 0 auto 56px;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 30px;
+    line-height: 1.7;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0 0 36px;
+    letter-spacing: 0.04em;
+    text-wrap: pretty;
+  }
+
+  .hero-sub {
+    font-family: "Noto Serif JP", serif;
+    font-size: 15px;
+    line-height: 1.95;
+    color: var(--text-sub);
+    font-weight: 400;
+    margin: 0 0 48px;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-rule {
+    width: 56px;
+    height: 1px;
+    background: var(--gold-pale);
+    margin: 0 auto 36px;
+    border: none;
+  }
+
+  .hero-meta {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px;
+    color: var(--text-sub);
+    letter-spacing: 0.12em;
+    line-height: 2;
+  }
+
+  .hero-meta .sep {
+    color: var(--gold-pale);
+    margin: 0 0.6em;
+  }
+
+  .scroll-hint {
+    margin-top: 80px;
+    color: var(--gold);
+    font-size: 18px;
+    animation: bob 2.4s ease-in-out infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(6px); opacity: 0.9; }
+  }
+
+  /* ─── Chapter Cover ─── */
+  .chapter-cover {
+    padding: 96px 24px 72px;
+    text-align: center;
+  }
+
+  .chapter-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin: 0 0 32px;
+    letter-spacing: 0.08em;
+  }
+
+  .chapter-rule {
+    width: 36px;
+    height: 1px;
+    background: var(--gold-pale);
+    margin: 0 auto 32px;
+    border: none;
+  }
+
+  .chapter-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    line-height: 1.85;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0 auto;
+    max-width: 480px;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  .read-time {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--text-sub);
+    margin-top: 28px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── Body ─── */
+  .body p {
+    margin: 0 0 1.6em;
+    color: var(--text-main);
+    text-wrap: pretty;
+  }
+
+  .body strong {
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .body h2 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--text-main);
+    margin: 64px 0 28px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Quote loop */
+  .loop {
+    background: var(--bg-sub);
+    border-left: 3px solid var(--gold);
+    padding: 22px 24px 22px 28px;
+    margin: 32px 0;
+    font-family: "Shippori Mincho", "Noto Serif JP", serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.95;
+    color: var(--text-sub);
+    text-indent: 0;
+  }
+
+  .loop p {
+    margin: 0 0 0.8em;
+    text-indent: 1.2em;
+  }
+
+  .loop p:last-child { margin-bottom: 0; }
+
+  /* Function rename box */
+  .rename {
+    border: 1px solid var(--gold-pale);
+    background: var(--bg);
+    padding: 36px 24px 40px;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .rename .old {
+    color: var(--text-mute);
+    font-size: 14px;
+    text-decoration: line-through;
+    text-decoration-color: var(--text-mute);
+    text-decoration-thickness: 1px;
+    line-height: 1.6;
+    display: block;
+  }
+
+  .rename .arrow {
+    display: block;
+    color: var(--gold);
+    font-size: 16px;
+    margin: 18px 0 18px;
+    line-height: 1;
+  }
+
+  .rename .new {
+    font-family: "Noto Serif JP", serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    line-height: 1.55;
+    display: block;
+    text-wrap: balance;
+  }
+
+  /* Tarot symbol */
+  .tarot {
+    border-left: 2px solid var(--purple);
+    background: rgba(107, 78, 141, 0.06);
+    padding: 18px 20px;
+    margin: 32px 0;
+    font-family: "Noto Serif JP", serif;
+    font-size: 14.5px;
+    line-height: 1.9;
+    color: var(--text-sub);
+  }
+
+  .tarot .label {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--purple);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .tarot .card {
+    color: var(--purple);
+    font-weight: 500;
+  }
+
+  /* Phase marker */
+  .phase-marker {
+    text-align: center;
+    margin: 80px 0 40px;
+  }
+
+  .phase-rule-text {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.4em;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0 4px;
+  }
+
+  .phase-rule-text::before,
+  .phase-rule-text::after {
+    content: "───";
+    color: var(--gold-pale);
+    margin: 0 14px;
+    letter-spacing: 0;
+  }
+
+  .phase-name {
+    font-family: "Noto Serif JP", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 22px 0 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .phase-period {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 13px;
+    color: var(--text-sub);
+    letter-spacing: 0.08em;
+  }
+
+  /* Phase ending hook */
+  .hook {
+    font-family: "Noto Serif JP", serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 2;
+    color: var(--text-main);
+    margin: 48px 0 56px;
+    padding: 0 8px;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  /* Pull quote in body */
+  .pull {
+    font-family: "Noto Serif JP", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 2;
+    color: var(--text-main);
+    margin: 36px 0;
+    padding: 0 4px;
+    text-wrap: pretty;
+  }
+
+  /* Fine rule */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--gold-pale);
+    margin: 56px auto;
+    width: 80%;
+  }
+
+  /* Table (chapter 3 phase list) */
+  .phase-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0 16px;
+    font-size: 14px;
+  }
+
+  .phase-table th,
+  .phase-table td {
+    text-align: left;
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--gold-pale);
+    line-height: 1.6;
+  }
+
+  .phase-table th {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 500;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .phase-table td:first-child {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 500;
+    color: var(--text-main);
+    width: 52%;
+  }
+
+  .phase-table td:last-child {
+    color: var(--text-sub);
+    font-size: 13px;
+  }
+
+  /* Numbered list (3 layers) */
+  .num-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 32px;
+    counter-reset: numlist;
+  }
+
+  .num-list li {
+    counter-increment: numlist;
+    padding: 14px 0 14px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--gold-pale);
+    line-height: 1.8;
+  }
+
+  .num-list li:last-child { border-bottom: none; }
+
+  .num-list li::before {
+    content: counter(numlist);
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .num-list strong {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-right: 0.6em;
+  }
+
+  /* Layer boxes (chapter 5) */
+  .layer {
+    border: 1px solid var(--gold-pale);
+    padding: 28px 24px 32px;
+    margin: 32px 0;
+    background: var(--bg);
+  }
+
+  .layer-head {
+    font-family: "Noto Serif JP", serif;
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 500;
+    margin: 0 0 20px;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .layer-head .layer-num {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-mute);
+    margin-right: 0.6em;
+    letter-spacing: 0.1em;
+  }
+
+  .layer p:last-child { margin-bottom: 0; }
+
+  .bridge {
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-size: 14px;
+    color: var(--text-sub);
+    margin: 32px 0;
+    letter-spacing: 0.05em;
+    font-style: italic;
+  }
+
+  /* Chapter 3 closing */
+  .chapter-end {
+    margin-top: 72px;
+    padding-top: 56px;
+    border-top: 1px solid var(--gold-pale);
+  }
+
+  .chapter-end-label {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-align: center;
+    display: block;
+    margin-bottom: 36px;
+  }
+
+  /* Chapter 6 — CTA */
+  .cta-section {
+    padding: 24px 0 24px;
+    text-align: center;
+  }
+
+  .cta-rule {
+    border: none;
+    border-top: 1px solid var(--gold-pale);
+    margin: 48px auto;
+    width: 60%;
+  }
+
+  .cta-main {
+    font-family: "Noto Serif JP", serif;
+    font-size: 24px;
+    line-height: 1.85;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 32px 0 24px;
+    letter-spacing: 0.04em;
+    text-wrap: pretty;
+  }
+
+  .cta-sub {
+    font-family: "Noto Serif JP", serif;
+    font-size: 17px;
+    color: var(--text-sub);
+    margin: 0 0 56px;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+  }
+
+  /* Phone frame */
+  .phone-frame {
+    margin: 48px auto;
+    max-width: 280px;
+    border: 1px solid var(--gold-pale);
+    border-radius: 28px;
+    padding: 16px 14px 20px;
+    background: var(--bg);
+    text-align: left;
+  }
+
+  .phone-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 11px;
+    color: var(--text-mute);
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+    padding: 0 4px;
+  }
+
+  .phone-input {
+    border: 1px solid var(--gold-pale);
+    border-radius: 18px;
+    padding: 12px 18px;
+    background: var(--bg-sub);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    color: var(--text-main);
+    letter-spacing: 0.08em;
+  }
+
+  .phone-input .send {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+  }
+
+  .cta-body {
+    text-align: left;
+    margin-top: 56px;
+  }
+
+  .cta-body p {
+    margin: 0 0 1.6em;
+    color: var(--text-main);
+  }
+
+  .signature-block {
+    text-align: right;
+    margin-top: 64px;
+    padding-right: 8px;
+  }
+
+  .signature {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--purple);
+    letter-spacing: 0.08em;
+    font-weight: 400;
+  }
+
+  .signature-jp {
+    font-family: "Noto Serif JP", serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--purple);
+    margin-top: 6px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 120px;
+    padding: 56px 24px 64px;
+    text-align: center;
+    border-top: 1px solid var(--gold-pale);
+  }
+
+  .foot-brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-left: 0.4em;
+  }
+
+  .foot-line {
+    font-family: "Noto Serif JP", serif;
+    font-size: 12px;
+    color: var(--text-sub);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .foot-copy {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    margin-top: 14px;
+  }
+
+  /* Mobile tuning */
+  @media (max-width: 420px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 56px 22px 72px; }
+    .hero-title { font-size: 26px; }
+    .chapter-cover { padding: 72px 22px 56px; }
+    .chapter-num { font-size: 42px; }
+    .chapter-title { font-size: 20px; }
+    .body h2 { font-size: 20px; }
+    .rename .new { font-size: 22px; }
+    .cta-main { font-size: 22px; }
+    .phase-table { font-size: 13px; }
+    .phase-table th, .phase-table td { padding: 12px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ───── HERO ───── -->
+<section class="hero">
+  <div class="brand-logo">KOTOHA</div>
+
+  <svg class="moon-deco" width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M14.5 11a6 6 0 1 1-6.5-6 5 5 0 0 0 6.5 6z" stroke="#b89455" stroke-width="0.8" fill="none"/>
+  </svg>
+
+  <h1 class="hero-title">夜になると胸の真ん中が<br>重くなる、あなたへ。</h1>
+
+  <p class="hero-sub">復縁の悩みを“機能”で説明する、<br>5フェーズの作動マップ</p>
+
+  <hr class="hero-rule">
+
+  <div class="hero-meta">
+    ことは｜復縁専門タロット占い師
+    <span class="sep">／</span>
+    読了目安: 約25分
+  </div>
+
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- ───── CHAPTER I ───── -->
+<section class="chapter-cover">
+  <div class="chapter-num">I</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">考えなくていいはずなのに、考えてしまうあなたへ<br>— 占いジプシーだった私が辿り着いた、もうひとつの読み方</h2>
+</section>
+
+<article class="container body">
+  <p>復縁したい彼のことを、考えてしまう夜が、続いていますか。</p>
+
+  <p>考えなくていいはずなのに、考えてしまう。<br>引きずらなくていいはずなのに、引きずってしまう。<br>自分でも、自分のことが持て余されている感覚。</p>
+
+  <p>あなたが今、これを読んでいるなら、たぶん同じなんです。<br>別れて10日の人も、半年の人も、1年経っている人も、夜になると、自分の中で何が起きているか、自分でわからない。</p>
+
+  <div class="loop">
+    <p>「これは未練？」「依存？」「弱さ？」「いつまで引きずっているんだ？」</p>
+    <p>自分に向けてラベルを貼っては、剥がして、また別のを貼って。</p>
+    <p>どれもしっくり来ないまま、一晩が終わる。</p>
+  </div>
+
+  <p>しっくり来ないのは、当然なんです。<br>あなたが今貼ろうとしているラベルは、全部間違っているから。</p>
+
+  <p>このリードマグネットで一番先に渡したいのは、その<strong>正確な名前</strong>です。</p>
+
+  <p><strong>あなたの夜の反応は、性格でも弱さでもありません。愛着システムの作動として、機能で説明できるものなんです。</strong></p>
+
+  <p>「機能」と言うと、冷たく聞こえるかもしれません。<br>でも、機能で説明できるということは、あなたの中で起きていることに<strong>正確な名前がつく</strong>ということなんですよね。</p>
+
+  <p>名前がつくと、不思議なくらい、呼吸が深くなる。<br>「私、おかしいんじゃないか」が、「これはこういう作動だ」に変わるからです。</p>
+
+  <p>私自身、この「機能で説明できる」という視点に辿り着くまでに、3年かかりました。</p>
+
+  <p>25歳の時、2年付き合った彼に振られて、そこから3年間、占いをはしごしてました。<br>電話占い、チャット占い、対面も1回。<br>5人以上の占い師に、毎月3〜5万。<br>半年で20万を超えた頃から、クレジットカードの明細を見るのが、怖くなりました。</p>
+
+  <p>でも、止められなかった。</p>
+
+  <p>「彼はまだあなたのことが好きですよ」って言われると、3日くらいは安心して眠れる。<br>でも3日経つと、また不安になって、別の先生に予約を入れている自分がいる。</p>
+
+  <p>あの頃の私は、「なんで彼がああしたのか」を誰かに説明してほしくて、何人も占い師をはしごしてました。<br>でも、誰も「なぜ」には答えてくれなかった。</p>
+
+  <div class="loop">
+    <p>「カードではこう出てます」</p>
+    <p>「エネルギー的にはこうです」</p>
+  </div>
+
+  <p>うん、それはわかった。<br>でも私が知りたいのは、「なぜ」なんです。</p>
+
+  <p>なぜ私の動悸は止まらないのか。<br>なぜ私は4人目の占い師を予約しているのか。<br>なぜ夢に彼が出てくるのか。</p>
+
+  <p>外から答えを集めても、自分の中で起きていることの説明には、ならない。</p>
+
+  <p>私が止められなかったのは、彼の気持ちを知りたかったからじゃない。<br>「<strong>自分の中で起きていることに、誰かに名前をつけてほしかった</strong>」からなんです。</p>
+
+  <p>3人の占い師に同じ質問をしてたのは、彼の答えを集めてたんじゃありません。<br><strong>自分の説明を、自分の外側で完成させようとしていた</strong>んです。</p>
+
+  <p>外側では完成しないんですよね。<br>答えを集めれば集めるほど、自分の中の説明は、崩れていく。</p>
+
+  <p>このリードマグネットで渡したいのは、そこから先の話です。<br><strong>外から答えを集めるのを止めて、自分の中で再現できる地図を持つための入口。</strong></p>
+
+  <p>この入口を、5フェーズに分けて、これから一緒に見ていきます。</p>
+</article>
+
+<!-- ───── CHAPTER II ───── -->
+<section class="chapter-cover">
+  <div class="chapter-num">II</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">あなたの反応に、3つのレイヤーがある<br>— タロット／愛着／占星術が映すもの</h2>
+</section>
+
+<article class="container body">
+  <p>私が普段、復縁の鑑定で使うレンズは3つあります。</p>
+
+  <ol class="num-list">
+    <li><strong>タロット</strong>（今この瞬間の象徴）</li>
+    <li><strong>愛着理論</strong>（あなたと相手の作動パターン）</li>
+    <li><strong>西洋占星術</strong>（生まれ持った関係性の傾向）</li>
+  </ol>
+
+  <p>この3つは、それぞれ違う時間軸を映しているんです。</p>
+
+  <p>タロットは「今この瞬間、何が動いているか」を象徴で見せる。<br>愛着理論は「あなたと彼の関係構造の中で、どういう作動が起きているか」を機能で見せる。<br>西洋占星術は「あなたが生まれ持った関係性の傾向」を土台として見せる。</p>
+
+  <p>普通の占い師さんは、タロット1枚で完結させることが多い。<br>心理系の発信者さんは、愛着理論で「あなたは○○型」と診断して終わることが多い。<br>スピリチュアル寄りの占い師さんは、占星術で「今日の運勢」を出すことが多い。</p>
+
+  <p>私のやり方が他と違うのは、この3つを<strong>並列ではなく、重ねて使う</strong>ところなんです。</p>
+
+  <p>具体例を1つ見せます。</p>
+
+  <p>ある相談者さんがいて、別れて2ヶ月の方でした。<br>私はカードを引きました。<br>「逆位置の塔」が出ました。</p>
+
+  <p>塔のカードは、突然の崩壊を示します。<br>逆位置で出た時は、崩壊の余韻が残っている状態。</p>
+
+  <p>ここで「カードがそう言ってるから」で終わったら、ただの占い結果です。<br>でも私はその上に愛着理論を重ねます。</p>
+
+  <div class="loop">
+    <p>「カードが言ってる崩壊の余韻、これは心理学的にも、回避型の男性が振った後によく起こす反応とパターンが一致します。回避型は親密さが高まった瞬間に距離を取る作動を持っているので、自分から振ったあとに罪悪感が遅れて来る。だからこのカードは信じていい」</p>
+  </div>
+
+  <p>さらに占星術を重ねます。</p>
+
+  <div class="loop">
+    <p>「彼の月星座が水瓶座なら、感情の処理に時間がかかる傾向が生得的にあります。だから、3ヶ月以内の急な再接近は構造的に起きにくい。これも合わせると、この崩壊の余韻は半年スパンで動きます」</p>
+  </div>
+
+  <p>これが、3層を重ねて読むということなんです。</p>
+
+  <p>カードは「象徴」を示す。<br>愛着理論は「なぜそう動くか」の機能を補強する。<br>占星術は「時間軸の長さ」を見せる。</p>
+
+  <p>3つが重なった時に、初めて「占いなのに、信じていい根拠が地に足のついた形でわかる」状態になる。</p>
+
+  <p>私が「占いなのに信じられる」を作っているのは、ここなんですよね。</p>
+
+  <p>ここから、あなたの今の作動点を5つのフェーズに分けて読んでいきます。<br>主に使うのは2層目の愛着理論。<br>1層目のタロットは、それぞれのフェーズの象徴として軽く触れます。<br>3層目の占星術は、後半のケーススタディで本格的に重ねます。</p>
+
+  <p>まずは、自分が今どこにいるか。<br>そこから始めます。</p>
+</article>
+
+<!-- ───── CHAPTER III ───── -->
+<section class="chapter-cover">
+  <div class="chapter-num">III</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">あなたの今の作動点を、5つのフェーズで読む<br>— 動悸・はしご・夢・揺れ・選び直し</h2>
+</section>
+
+<article class="container body">
+  <p>復縁文脈の読者を、私は5つのフェーズに分けて見ています。</p>
+
+  <table class="phase-table">
+    <thead>
+      <tr><th>名称</th><th>状況</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>別離直後・呆然期</td><td>別れて0〜2週間</td></tr>
+      <tr><td>占いジプシー突入期</td><td>別れて2週〜3ヶ月</td></tr>
+      <tr><td>冷却期間・反すうループ期</td><td>別れて3〜9ヶ月</td></tr>
+      <tr><td>諦めかけ・整理移行期</td><td>別れて半年〜1年半</td></tr>
+      <tr><td>新展開検討・選び直し期</td><td>別れて1年以上</td></tr>
+    </tbody>
+  </table>
+
+  <p>これから一つずつ、夜の風景・身体反応・思考パターンを描いていきます。<br>読みながら、「私は今このフェーズだ」と自分の現在地を見つけてください。</p>
+
+  <p>複数フェーズに重なる感覚があるかもしれません。<br>それで大丈夫です。<br>「一番強く今動いているのはどれか」で、1つ選んでください。</p>
+
+  <p>各フェーズで一番大事にしたいのは、<strong>症状ラベル→機能名づけ</strong>の置き換え。</p>
+
+  <p>「重い」「未練」「弱い」「依存」「しつこい」「優柔不断」「未練がましい」というSNSの自虐ラベルを、機能名に置き換えていきます。</p>
+
+  <!-- Phase I -->
+  <div class="phase-marker">
+    <div class="phase-rule-text">PHASE I</div>
+    <div class="phase-name">別離直後・呆然期</div>
+    <div class="phase-period">別れて0〜2週間</div>
+  </div>
+
+  <p>23時、ベッドに座ったまま電気を消せない。<br>LINEのトーク画面を開いて、彼の最後のメッセージを上から下までスクロールする。<br>3往復目までは普通の会話だったのに、4往復目で急に空気が変わった。<br>あの時、私が何か言ったんだろうか。</p>
+
+  <p>胸の真ん中が、ずっと重い。<br>息を吸うと、肋骨の内側が引っかかる。<br>食欲はゼロじゃない。でも味がしない。<br>お米を口に入れた瞬間に「なんで私だけが食べてるんだろう」と思って、涙が出る。<br>眠りが浅くて、夢で彼が出てきた瞬間に目が覚める。<br>生理が1週間早く来た。</p>
+
+  <p>スマホの画面が暗転するたびに、自分の顔が映って、目の周りが赤い。</p>
+
+  <p>寝落ちは3時前。<br>6時前に勝手に目が覚める。</p>
+
+  <div class="loop">
+    <p>頭の中では「何が悪かったんだろう」「あの時ああ言わなければ」「いや、向こうが先におかしかった」「でも、私が我慢しきれなかったのも事実」「やり直したい」「いや、もう無理」「連絡しちゃダメ」「でも、なんで連絡くれないの」のループが、シャワー浴びてる15分の間に5周する。</p>
+  </div>
+
+  <p>このフェーズで起きている動悸・呼吸の浅さ・食欲消失。<br>これを「私が弱いから」「ショックに耐えられない私」と裁かないでください。</p>
+
+  <p>これは<strong>高不安状態の作動</strong>なんです。</p>
+
+  <p>愛着システムは、安全基地（=彼）を失った時に、強制的に過活性化します。<br>過活性化というのは、「安全基地を取り戻すために、感情を強く動かして、行動を促す機能」のこと。</p>
+
+  <p>身体は、あなたを「動かす」ために、わざと不快を出している。<br>眠れないのも、食欲がないのも、「立ち止まらせない」ための機能なんですよね。</p>
+
+  <div class="tarot">
+    <span class="label">Tarot Symbol</span>
+    タロットでこの状態を象徴で映すなら、<span class="card">逆位置の塔</span>が一番近い。急な崩壊の余韻と、まだ整理しきれていない瓦礫のイメージ。この時期の読者にカードを引くと、塔か、逆位置の星か、剣のスートが出ることが多いです。
+  </div>
+
+  <div class="rename">
+    <span class="old">弱いから動悸が止まらない</span>
+    <span class="arrow">↓</span>
+    <span class="new">機能としての高不安作動</span>
+  </div>
+
+  <p>「弱いから動悸が止まらない」を、「身体が機能している」に置き換えてみてください。<br>動悸は、あなたが愛着システムを正常に持っている証拠です。</p>
+
+  <p>別れて間もない時期は、身体のエネルギー自体が枯れています。<br>今夜できるのは、たぶん「動悸は機能している」を口の中で1回つぶやいてみる、それだけで十分。<br>それが、3層を組み合わせて読み始める前の、最初の一歩になります。</p>
+
+  <p class="hook">動悸を機能と理解しないまま2週間を過ごすと、次の占いジプシー突入期の入口に立っています。鑑定書を1人目に予約する朝が、3週間後に来ます。</p>
+
+  <!-- Phase II -->
+  <div class="phase-marker">
+    <div class="phase-rule-text">PHASE II</div>
+    <div class="phase-name">占いジプシー突入期</div>
+    <div class="phase-period">別れて2週〜3ヶ月</div>
+  </div>
+
+  <p>22時、ベッドに入ってから電話占いのアプリを開く。<br>前回鑑定してくれた先生のページを見て、「今日も予約取れるかな」とスケジュールをスクロールする。</p>
+
+  <p>先週は3人の先生に同じ質問をした。<br>1人目は「彼はあなたを忘れていません」。<br>2人目は「半年以内に連絡が来ます」。<br>3人目は「今は冷却期間です」。</p>
+
+  <p>3人とも違う答えで、結局どれを信じればいいかわからない。<br>それでも、4人目を予約してしまう。<br>クレカの利用明細を月末に見て、「今月もう3万使ってる」と一瞬青ざめて、でも次の日にはまた検索している。</p>
+
+  <div class="loop">
+    <p>頭の中は「あの先生は当たるって言われてた」「でもこの先生は違うこと言ってた」「3人中2人が"連絡来る"って言ったから、たぶん来る」「でも来ない時期が長すぎる」「次の先生に聞こう」「いや、もう聞きすぎだ」「でも、確かめないと不安で寝れない」「自分でカード引いてみようかな」「でも、自分で引いたら客観性がない」「やっぱり、もう一人だけ聞こう」のループ。</p>
+  </div>
+
+  <p>このはしご行動を、「依存気質だから」「弱いから」と裁かないでください。</p>
+
+  <p>これは<strong>安心の再確認による感情調整</strong>なんです。</p>
+
+  <p>高不安状態が長く続くと、愛着システムは「安全基地を取り戻す手がかり」を外側で探し続けます。<br>占い師の言葉は、その手がかりを「短期的に」与えてくれる。<br>だから3日は、楽になる。</p>
+
+  <p>でも3日経つと、外側からもらった安心は揮発するんですよね。<br>だからまた、次の占い師を探す。<br>これは「依存」ではなくて、機能としての<strong>安心の再確認サイクル</strong>です。</p>
+
+  <p>私自身、このフェーズを3年やりました。</p>
+
+  <p>5人以上の占い師をはしごしました。<br>電話占い、チャット占い、対面占いも1回行った。<br>月3〜5万を当たり前のように溶かして、半年で20万を超えました。</p>
+
+  <p>私を救ったのは、「占いを止めなさい」と言ってくれる人ではなかったんです。<br>そういうことを言う人は、私の動機を、理解していなかった。</p>
+
+  <p>これが、占いジプシー突入期の構造です。</p>
+
+  <div class="tarot">
+    <span class="label">Tarot Symbol</span>
+    タロットで象徴を1枚選ぶなら、<span class="card">月のカード</span>。月は幻惑と、霧の中を歩く感覚を象徴します。次々と現れる答えに目を眩まされて、自分の足元が見えなくなる時期。
+  </div>
+
+  <div class="rename">
+    <span class="old">依存気質だから占いに頼る</span>
+    <span class="arrow">↓</span>
+    <span class="new">機能としての安心の再確認</span>
+  </div>
+
+  <p>「依存気質」を、「機能としての安心の再確認」に置き換えてみてください。<br>あなたは依存しているのではなくて、システムが正常に作動しているだけです。</p>
+
+  <p class="hook">「安心の再確認」だと知らないまま3ヶ月続けると、私が3年でやったことを、あなたが半年で再現します。20万を超えるスピードは、私より速いかもしれません。</p>
+
+  <!-- Phase III -->
+  <div class="phase-marker">
+    <div class="phase-rule-text">PHASE III</div>
+    <div class="phase-name">冷却期間・反すうループ期</div>
+    <div class="phase-period">別れて3〜9ヶ月</div>
+  </div>
+
+  <p>1時、布団の中でスマホを伏せて、また開いて、また伏せる動作を15分繰り返す。<br>彼のXアカウントを開いて、最終ログイン時刻を見る。<br>「2時間前」。<br>じゃあ、まだ起きてる。<br>何してるんだろう。</p>
+
+  <p>プロフィール画像が変わっていないことを確認して、ホッとする自分が嫌になる。</p>
+
+  <p>今日は職場で、彼と通っていたカフェの近くを通ったから、その瞬間に動悸が来た。<br>電車の中で偶然似た背格好の男を見て、心臓が跳ねた。<br>「もう半年なのに、なんで」とつぶやいて、布団を被る。</p>
+
+  <p>気づいたら、夢で彼が「久しぶり」と言ってきて、目が覚めた瞬間に泣いている。<br>朝起きた時に枕が湿っている日が、月に5〜6回。</p>
+
+  <div class="loop">
+    <p>頭の中は「冷却期間って言われたから待ってる」「待ってる間に何していいかわからない」「忘れようとしてるのに、夢に出てくるって、まだ気持ちが残ってるってこと？」「いや、占い師は"脳の整理"って言ってた」「じゃあ整理されてるはずなのに、なんで動悸来るの」「彼女できたのかな」「彼女できたら、私はどうなるんだろう」「忘れられたら、それはそれで悲しい」「忘れられたくない」「でも、忘れた方が楽」のループ。</p>
+  </div>
+
+  <p>このフェーズの読者から一番よく聞く言葉が、これなんです。</p>
+
+  <p class="pull">「忘れられたら、彼女できたらって考える時間が、一番つらい」</p>
+
+  <p>この言葉、私は何回も聞きました。</p>
+
+  <p>夢に出てくること。<br>空間記憶のトリガー（共通のカフェ・通勤路・職場）で動悸が来ること。<br>「もう半年なのに」と思うこと。</p>
+
+  <p>これを「未練がましい」「しつこい」と裁かないでください。</p>
+
+  <p>ここで一つ、聞いてほしいことがあります。</p>
+
+  <p class="pull"><strong>半年経って動悸が来るのは、彼を忘れていない証拠ではなくて、彼のいる前提で組み立てた身体が、まだ解体されていない証拠なんです。</strong></p>
+
+  <p>これは<strong>脳の過去データ棚卸し+愛着システムの追加スキャン</strong>。</p>
+
+  <p>人間の脳は、強い情動経験を「ただ忘れる」ようにはできていないんですよね。<br>夢で繰り返すのは、過去のデータを定期的に整理しているから。<br>空間記憶のトリガーで動悸が来るのは、その場所に「彼との記憶」が物理的にコーディングされているからなんです。</p>
+
+  <p>これは「未練が消えていない証拠」じゃありません。<br><strong>脳が正常に過去データを処理している証拠</strong>なんです。</p>
+
+  <p>しかも、愛着システムは別れの後も「安全基地は本当に失われたか」を定期的にスキャンします。<br>夢の中の「久しぶり」は、システムによる確認作業。<br>SNSのログイン時刻チェックも、同じ機能なんですよね。</p>
+
+  <p>止められないのは、止める必要がないから。</p>
+
+  <div class="tarot">
+    <span class="label">Tarot Symbol</span>
+    タロットで象徴を1枚選ぶなら、<span class="card">月のカード</span>もう一度、または<span class="card">逆位置の星</span>。霧の中を歩く感覚と、淡く再点火する希望のイメージ。先ほどの占いジプシー突入期の月との違いは、ここでは月が<strong>サイクルとして繰り返される</strong>こと。
+  </div>
+
+  <div class="rename">
+    <span class="old">しつこいから夢に見る</span>
+    <span class="arrow">↓</span>
+    <span class="new">機能としての過去データ棚卸し</span>
+  </div>
+
+  <p>「しつこい」を、「機能としての過去データ棚卸し」に置き換えてみてください。</p>
+
+  <p class="hook">「脳の過去データ棚卸し」だと知らないまま半年待ち続けると、次の諦めかけ・整理移行期の入口に立った時、揺れる自分を「優柔不断」と呼んで、また半年延長します。</p>
+
+  <!-- Phase IV -->
+  <div class="phase-marker">
+    <div class="phase-rule-text">PHASE IV</div>
+    <div class="phase-name">諦めかけ・整理移行期</div>
+    <div class="phase-period">別れて半年〜1年半</div>
+  </div>
+
+  <p>23時半、ソファで部屋着のまま、スマホで彼の最後のメッセージのスクショを長押しして、削除しようとする。<br>指が止まる。<br>3秒考えて、結局アルバムの一番奥のフォルダに移動させる。</p>
+
+  <p>「今度こそさよなら」とInstagramのストーリーに書いて、5分後に消す。<br>新しく出会った人とのLINEを開いて、3行返信を書いて、また消す。<br>「彼じゃない人と話してても、頭の半分が彼のことを考えてる自分」が嫌になる。</p>
+
+  <p>深夜2時、急に過去の写真フォルダを開いて、別れた当日の写真まで遡って、また閉じる。</p>
+
+  <p>動悸の頻度は減った。<br>でも、削除しようとする瞬間だけ、指先が冷たくなる。<br>新しい人との会話の最中に、ふっと喉が詰まる瞬間がある。<br>涙の量は減ったけど、出る時は静かに5分くらい止まらない。</p>
+
+  <div class="loop">
+    <p>頭の中は「もう前に進んでいいはず」「でも、進もうとすると胸が痛む」「これは未練？それとも、ただの慣れ？」「新しい人といる方が楽だけど、深さが足りない」「彼との重さに比べたら、誰も追いつかない」「でも、一生彼を超える人が出てこなかったらどうしよう」「いや、もう諦めよう」「諦めたら、私のあの2年は何だったの」「<em>忘れたいのか戻りたいのか、自分でもまだ揺れてる</em>」のループ。</p>
+  </div>
+
+  <p>この「忘れたいのか戻りたいのか自分でもまだ揺れている」の言葉、私は何回も受け取ってきました。</p>
+
+  <p>このフェーズの読者は、「揺れている自分」を一番嫌いになりがちです。<br>「優柔不断」「未練がましい」「いつまで引きずるんだ」と、自分を責めてしまう。</p>
+
+  <p>でも、ここで一番聞いてほしいことがあります。</p>
+
+  <p class="pull"><strong>揺れていること自体が、処理が動いている証拠なんです。</strong></p>
+
+  <p>愛着の中には「内的作業モデル」というものがあって、過去の関係を<strong>今の自分の中でどう位置づけるか</strong>を、長期的に書き換えていく機能があります。</p>
+
+  <p>これは一気には、書き換わりません。<br>過去の関係を完全に消すのではなくて、「あの関係はあった」「でも今の私はもうあそこにはいない」という新しい位置づけを、ゆっくり作っていく作業です。</p>
+
+  <p>その途中で起きるのが、この「揺れ」なんですよね。</p>
+
+  <p>揺れていない人は、まだ書き換えに着手していないか、書き換えが終わっているかのどちらか。<br><strong>揺れている人は、今まさに作業中</strong>です。</p>
+
+  <p class="pull"><strong>揺れている時間は、書き換えの作業時間。1年2ヶ月揺れた人は、1年2ヶ月作業をしていた、ということです。揺れた量だけ、書き換えの精度が上がります。</strong></p>
+
+  <p>「忘れたい」と「戻りたい」が同じ夜に来ることは、矛盾じゃない。<br>処理の途中で、両方の信号が同時に出ているだけなんです。</p>
+
+  <p>これを「優柔不断」と裁かないでください。<br><strong>機能としての愛着更新中の過渡期</strong>です。</p>
+
+  <div class="tarot">
+    <span class="label">Tarot Symbol</span>
+    タロットで象徴を1枚選ぶなら、<span class="card">吊るされた男</span>。動けない、でも視点が逆転している状態を象徴します。前に進めないように見えて、実は内側で大きな書き換えが起きている時期。
+  </div>
+
+  <div class="rename">
+    <span class="old">優柔不断だから揺れる</span>
+    <span class="arrow">↓</span>
+    <span class="new">機能としての過渡期作動</span>
+  </div>
+
+  <p>「優柔不断」を、「機能としての過渡期作動」に置き換えてみてください。</p>
+
+  <p class="hook">「過渡期作動」だと知らないまま新しい人とのLINEを続けると、頭の半分が彼を考えている自分を、新しい関係の中にそのまま持ち込みます。新しい関係も、同じ作動で壊れます。</p>
+
+  <!-- Phase V -->
+  <div class="phase-marker">
+    <div class="phase-rule-text">PHASE V</div>
+    <div class="phase-name">新展開検討・選び直し期</div>
+    <div class="phase-period">別れて1年以上</div>
+  </div>
+
+  <p>22時、新彼の家から帰ってきて、自分の部屋でシャワーを浴びる。<br>ソファに座って、スマホを開くと、元彼から「久しぶり」のLINEが2時間前に来ている。</p>
+
+  <p>3秒、画面を見つめる。<br>返信を打ち始めて、消す。<br>新彼に「今日ありがとう」のLINEだけ返して、元彼の通知は既読にしたまま放置する。</p>
+
+  <p>布団に入って、天井を見ながら、「なんで今このタイミングで」とつぶやく。<br>元彼のSNSを開いて、最終ログインを確認する自分に、気づいた瞬間にスマホを伏せる。<br>「今度こそ、選ばないって決めたはず」と声に出す。</p>
+
+  <p>動悸は来ない。<br>でも、元彼の名前を見た瞬間、喉の奥が一回引きつる。<br>新彼と一緒にいる時はリラックスできる。<br>元彼の通知を見た夜だけ、寝つきが悪い。</p>
+
+  <div class="loop">
+    <p>頭の中は「あの頃の私ではない」「今の生活は、元彼がいない前提で組み立ててきた」「でも、彼が変わってる可能性はある」「いや、人はそんなに変わらない」「変わったとしても、私の側が戻れない」「断る理由は十分ある」「でも、断った後に後悔したらどうしよう」「会うだけ会ってみるか」「いや、会ったら絶対揺れる」「どうしよう」のループ。</p>
+  </div>
+
+  <p>このフェーズで起きる「喉の引きつり」を、「未練がましい自分」と裁かないでください。</p>
+
+  <p>これは<strong>過去サイクルの記憶が身体に残っている作動</strong>なんです。</p>
+
+  <p>愛着システムは、過去の関係で繰り返したパターンを身体に記憶させます。<br>喉が引きつるのは、過去のあなたが「彼の名前を見た時に身体を緊張させていた」記憶を、システムが今でも持っているからなんですよね。</p>
+
+  <p>これは「まだ未練がある」んじゃない。<br><strong>過去のサイクルを身体が覚えていて、合図として出している</strong>だけです。</p>
+
+  <p>このフェーズで一番大事なのは、「あの頃の私ではない」という変化認識を、自分でどれだけ解像度高く言語化できるかなんです。</p>
+
+  <p>「あの頃の私と、今の私は、何が違うか」<br>ここに具体的な答えを持っている人ほど、選び直しの精度が上がります。<br>逆に、変化を漠然としか言語化できないと、過去のサイクルに引き戻されやすい。</p>
+
+  <div class="tarot">
+    <span class="label">Tarot Symbol</span>
+    タロットで象徴を1枚選ぶなら、<span class="card">節制</span>または<span class="card">正位置の月の後の太陽</span>。過去と未来を統合して、新しい配合を作る作業を象徴します。答えを出すのではなく、答えを出すための土台を整える時期。
+  </div>
+
+  <p class="pull"><strong>あの頃の私は、強くて、寂しくて、判断ができなかった。今のあなたは、ちゃんと判断ができる場所まで来ている。喉の引きつりは、判断できる場所まで来た合図なんです。</strong></p>
+
+  <div class="rename">
+    <span class="old">未練がましいから喉が引きつる</span>
+    <span class="arrow">↓</span>
+    <span class="new">機能としての過去サイクル記憶の作動</span>
+  </div>
+
+  <p>「未練がましい」を、「機能としての過去サイクル記憶の作動」に置き換えてみてください。</p>
+
+  <p class="hook">「過去サイクル記憶」だと知らないまま元彼に返信すると、1年8ヶ月かけて作ってきた今の生活が、3週間で過去のサイクルに引き戻されます。あの頃の私は、強くて、寂しくて、判断ができなかった。</p>
+
+  <!-- Chapter 3 closing -->
+  <div class="chapter-end">
+    <span class="chapter-end-label">— 第3章 締め —</span>
+
+    <p>ここまで5つのフェーズを見てきました。</p>
+
+    <p>5つすべてに共通しているのは、「症状ラベル」を「機能名」に置き換えると、<strong>自分を裁く言語が消える</strong>ということなんです。</p>
+
+    <p>「弱い」「依存気質」「しつこい」「優柔不断」「未練がましい」。<br>これは全部、SNSが量産した自虐ラベル。<br>あなたが本当はそうじゃないのに、ラベルだけが先に貼られてしまっている。</p>
+
+    <p>このリードマグネットでお伝えしたかったのは、<strong>ラベルを使わなくていい場所が、ここにある</strong>、ということです。</p>
+
+    <p>そして、今夜あなたが機能名置換をしたことは、未来のあなたが何ヶ月も何年もかけて辿るはずだった道のりの、最初の一歩を、今のうちに済ませた、ということでもあるんですよね。</p>
+  </div>
+</article>
+
+<!-- ───── CHAPTER IV ───── -->
+<section class="chapter-cover">
+  <div class="chapter-num">IV</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">あなたの今の作動点に、名前がついた<br>—「自分のことだ」の先に何があるか</h2>
+</section>
+
+<article class="container body">
+  <p>今、あなたの中で何が起きたか、私の側から見えていることを言います。</p>
+
+  <p>ここまで読み進めながら、あなたは自分のフェーズを特定したはずです。<br>そして、自分の動悸・はしご・夢・揺れ・喉の引きつりを、機能名で言い換えたはずです。</p>
+
+  <div class="loop">
+    <p>「弱いから動悸が止まらない」が、「機能としての高不安作動」に置き換わった。</p>
+    <p>「依存気質だから占いに頼る」が、「機能としての安心の再確認」に置き換わった。</p>
+    <p>「しつこいから夢に見る」が、「機能としての過去データ棚卸し」に置き換わった。</p>
+    <p>「優柔不断だから揺れる」が、「機能としての愛着更新中の過渡期」に置き換わった。</p>
+    <p>「未練がましいから喉が引きつる」が、「機能としての過去サイクル記憶」に置き換わった。</p>
+  </div>
+
+  <p>この<strong>置き換えそのもの</strong>が、このリードマグネットで一番渡したかったものです。</p>
+
+  <p>なぜここまで「機能名」にこだわるか。</p>
+
+  <p>私は復縁の鑑定を100件以上してきました。<br>タロットを引いて、愛着の構造を読んで、必要なら出生図も見て、ヒアリングシートを読んで、というのを繰り返してきました。</p>
+
+  <p>100件以上見てきて、見えてきた共通パターンがあります。</p>
+
+  <p class="pull">復縁できる人とできない人を分けるのは、<strong>自分の今の反応に名前をつけられるかどうか</strong>でした。</p>
+
+  <p>意外でしたか。<br>私も最初は意外でした。</p>
+
+  <p>「復縁できる人」は、彼の気持ちを聞きに来る人だと思ってたんです。<br>だから、彼の気持ちが当たった鑑定をすれば復縁できると思ってた。</p>
+
+  <p>違いました。</p>
+
+  <p>100件のうち、復縁できた人にだけ共通していたのは、こうでした。</p>
+
+  <p>自分の動悸を「機能」として説明できる。<br>自分のはしご行動を「機能」として説明できる。<br>自分の揺れを「機能」として説明できる。<br>自分の喉の引きつりを「機能」として説明できる。</p>
+
+  <p>つまり、<strong>自分の中で起きていることに、自分で名前をつけられる</strong>人。</p>
+
+  <p>逆に、復縁できない人に共通していたのは、彼の気持ちを聞き続けて、自分の作動を説明できないまま終わる人でした。<br>聞いた答えで一瞬安心して、3日後に同じ不安が戻って、また別の人に聞いて、を繰り返す。<br>このサイクルだと、どれだけ良い鑑定をもらっても、行動が変わらないんですよね。</p>
+
+  <p>このパターンでつまずいた人を、2人だけ、紹介します。<br>実在の相談者の話ではなくて、複数の鑑定経験を組み合わせたフィクションです。</p>
+
+  <p>一人は、30代前半の女性で、30歳で5年付き合った彼に振られた人。<br>私のところに来た時、別れて3年が経っていました。<br>3年の間に、占い師に40人ほどかかった、と聞きました。月3万を3年。100万を超えていました。<br>3年で何が見えたかを聞くと、「何も見えていない、ただ不安が薄まる夜が3日続くだけ」と言いました。<br>動悸も、夢も、空間記憶のトリガーも、3年前のまま。<br>ラベルだけが「未練がましい」から「もう諦めるべき」「いつまで引きずっているんだ」に変わっていきました。<br>機能名がついていなかったから、3年経っても作動が変わらなかった。</p>
+
+  <p>もう一人は、30代後半の女性で、元彼と別れた1年半後に新しい人と付き合った人。<br>新しい人とは2年付き合って、別れました。<br>私のところに来たのは、新しい人と別れた直後でした。<br>「同じ別れ方をした」と言いました。「3往復目までは普通の会話で、4往復目から空気が変わって、半年後に振られた」。<br>元彼との別れと、新しい人との別れが、構造ごと一致していました。<br>自分の作動を機能名で持っていない人は、関係を変えても、同じ作動で壊します。<br>関係の相手が変わるだけで、サイクルは同じなんです。</p>
+
+  <p>復縁の鍵は、彼の気持ちを当てることじゃなかった。<br><strong>自分の今の反応の機能化</strong>でした。</p>
+
+  <p>これが、私が3年の占いジプシー時代を経て、100件の鑑定を経て、辿り着いた答えです。</p>
+
+  <p>そしてここまでが、このリードマグネットで90%渡しきりたかった内容なんです。</p>
+
+  <p class="pull">あなたの夜の反応に、機能名はついた。<br>これは、外の占い師から渡された答えではなくて、あなたが自分で再現できる<strong>地図の入口</strong>です。</p>
+
+  <p>ここから先は、あなたと彼の関係構造の中で、このサイクルがどう反復しているか。<br>その動的な読みは、3層を組み合わせて読まないと出てこない領域です。</p>
+</article>
+
+<!-- ───── CHAPTER V ───── -->
+<section class="chapter-cover">
+  <div class="chapter-num">V</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">関係構造の中で、このサイクルはどう反復しているか<br>— 3層を組み合わせて読むということ</h2>
+</section>
+
+<article class="container body">
+  <p>「3層を組み合わせて読む」というのは、抽象的に言うと伝わりにくいので、1つの架空ケースで実演します。</p>
+
+  <p>実在の相談者の話ではなくて、複数の鑑定経験を組み合わせたフィクションです。</p>
+
+  <p>不安型のAさん（30代女性）と、回避型のBさん（30代男性）が、3年付き合って別れました。<br>別れの理由ははっきり言われず、Bさんから「ちょっと距離を置きたい」だけ。<br>Aさんは別れて4ヶ月後に、私のところに鑑定の依頼を持ってきました。</p>
+
+  <p>ここで私は、3層を順番に重ねていきます。</p>
+
+  <div class="layer">
+    <h3 class="layer-head"><span class="layer-num">LAYER 01</span>タロット</h3>
+
+    <p>私はAさんの状況に対して、複数枚引きを行います。<br>1枚引きでは、その瞬間の象徴しか出ません。<br>でも、Aさんの場合は「冷却期間中に同じサイクルが2回反復している」という自覚がありました。<br>だから、過去・現在・未来の3点で読むスプレッドを組みます。</p>
+
+    <p>過去の位置に「逆位置の塔」が出る。<br>現在の位置に「月のカード」が出る。<br>未来の位置に「逆位置の吊るされた男」が出る。</p>
+
+    <p>ここで意味のある情報は、カード単体ではない。<br><strong>3枚の並びの中で、サイクルが見えるかどうか</strong>なんです。</p>
+
+    <p>過去の塔は別れの瞬間の崩壊。<br>現在の月は霧の中。<br>未来の吊るされた男の逆位置は「動けないように見える状態が解ける兆し」。</p>
+
+    <p>この並びが言うのは、「Aさんは今、月の霧の中にいる。これは正常な作動。霧が晴れる兆しが未来に見える」ということ。<br>ただし、<strong>ここから抜けるためには何が必要か</strong>は、カードだけでは見えない。</p>
+  </div>
+
+  <div class="bridge">↓ そこで2層目に進みます。</div>
+
+  <div class="layer">
+    <h3 class="layer-head"><span class="layer-num">LAYER 02</span>愛着理論（アクター/パートナー効果）</h3>
+
+    <p>Aさんが不安型、Bさんが回避型。<br>これは2人の組み合わせとしてよくあるパターンです。<br>普通の心理系の発信は、ここで「不安型の人は確認行動を控えましょう」「回避型の人は距離を取ります」で終わる。</p>
+
+    <p>でも、復縁文脈で本当に大事なのは、<strong>Aさんの愛着がBさんの作動をどう引き起こしているか</strong>（=アクター/パートナー効果）です。</p>
+
+    <p>例えば、Aさんが過活性化（確認・接近）に入ると、Bさんは脱活性化（距離・遮断）を強化する。<br>Aさんが落ち着いていると、Bさんは安心して接近の余地が出る。</p>
+
+    <p>つまり、Aさんがサイクルから「抜けられるか」は、Aさん自身の作動状態に依存しています。<br>Bさんの行動を変えるのではなくて、Aさんの作動状態を整えると、Bさんの作動も変わる可能性が出る。</p>
+
+    <p>これは「彼を操作する」話ではない。<br><strong>自分の作動が相手のシステムに信号を送っている</strong>という構造の話です。</p>
+
+    <p>ここまで来て、初めて「冷却期間中に何をすべきか」が具体的に見えてきます。<br>ただ「待つ」のではない。<br>Aさん自身の高不安作動を整える期間として使う。<br>そうすると、Bさんに送られる信号が変わる。</p>
+  </div>
+
+  <div class="bridge">↓ ここで3層目に進みます。</div>
+
+  <div class="layer">
+    <h3 class="layer-head"><span class="layer-num">LAYER 03</span>西洋占星術（シナストリー）</h3>
+
+    <p>私はAさんとBさんの出生図を見ます。<br>シナストリーとは、2人の出生図を重ね合わせて、関係性の生得的な傾向を読む技法です。</p>
+
+    <p>もし、Aさんの射手座の月とBさんの山羊座の月が重なっていたら（ハードアスペクト）、感情の表現の仕方そのものに生得的なズレがあります。<br>これは「努力で完全に消えるズレ」ではなくて、「2人の関係の中で長期的に向き合う前提」になる構造です。</p>
+
+    <p>逆に、Aさんの金星とBさんの太陽が調和的に重なっていれば、引力の根は深く、サイクルが回復する余地が大きい。</p>
+
+    <p>シナストリーが教えてくれるのは、<strong>この関係の長期的な相性の地形図</strong>です。</p>
+  </div>
+
+  <p>ここまで来て、初めて「Aさんのケースのサイクルはこう反復している」「ここから抜けるにはこのタイミングでこう動く」が具体化するんです。</p>
+
+  <p>タロットの3枚の象徴 + 愛着理論のアクター/パートナー効果 + 占星術のシナストリー、この3つが重なって、初めて<strong>動的な読み</strong>が成立します。</p>
+
+  <p>1層だけだと、絵は止まったまま。<br>2層重ねると、構造が見えてくる。<br>3層重ねると、構造の中での<strong>動き方</strong>が見えてきます。</p>
+
+  <p>ちょっと、自分の話に戻していいですか。</p>
+
+  <p>私が3年の占いジプシー時代を抜け出せたのは、外の占い師に「自分のサイクルを読んでもらう」のを止めて、<strong>自分のサイクルを自分で読めるようになりたい</strong>と決めた瞬間からでした。</p>
+
+  <p>「自分で理解したい」が、強く動いたんです。</p>
+
+  <p>それでタロットと西洋占星術を学び始めて、心理学の本を読んで、3層を重ねる読み方ができるようになって、自分の状況が見えるようになって、行動が変わって、復縁できました。</p>
+
+  <p>だから、「自分の中で再現できる地図を持つ」というスタンスが、私の鑑定の根っこにあります。</p>
+
+  <p>ただ、ここで正直に伝えたいのは、<strong>自分のケースのサイクルを自分一人で読み解くのは、相当難しい</strong>ということなんです。</p>
+
+  <p>物理的に、難しい。</p>
+
+  <p>1人分のシナストリー（2人の出生図を重ねる相性盤）を組むだけで、私は2〜3時間かけています。<br>ホロスコープを2枚並べて、ハードアスペクトとソフトアスペクトを全部拾い出して、月星座と金星星座と火星星座の三角関係を計算する。<br>これは、本を読んで知識を仕入れた段階で、1人で2〜3時間です。</p>
+
+  <p>アクター/パートナー効果は、論文1本読んで使えるものじゃないんですよね。<br>不安型と回避型の組み合わせで、Aさんの確認行動がBさんのどの作動を引き起こすかは、100ケース見て初めてパターンが立ち上がります。<br>私が100件超の鑑定で見てきたパターンは、教科書の章末問題には、書いていない。</p>
+
+  <p>タロットの3枚スプレッド、愛着のアクター/パートナー効果、占星術のシナストリー、この3つは別々の言語体系です。<br>タロットの「逆位置の塔」を、愛着の「脱活性化」と接続させて、シナストリーの「月のハードアスペクト」と重ねるには、3つの言語の翻訳辞書が頭の中にないと、できない。<br>この翻訳辞書を作るのに、私は3年かかりました。</p>
+
+  <p>そして、これが一番大事なんですが、自分のケースを自分で3層読みすると、客観性がほぼゼロになります。<br>自分のケースだと、見たい結論に向かってカードを解釈してしまう。<br>不安型の人が「これは安心の再確認だ」と機能名を置きながら、結局「彼の気持ちが知りたい」に戻る。<br>自分のケースを読むのは、自分以外の人の方が、構造的に正確なんです。</p>
+
+  <p>これを自分一人で全部やろうとすると、また占いジプシーの霧に戻って、外の答え探しに迷い込む可能性が高い。</p>
+
+  <p>3層を組み合わせて読まないと、サイクルは見えてこない。</p>
+
+  <p class="pull">その読みは、私が引き受けます。</p>
+</article>
+
+<!-- ───── CHAPTER VI — CTA ───── -->
+<section class="chapter-cover">
+  <div class="chapter-num">VI</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">『相談』と、このトーク画面に送ってください</h2>
+</section>
+
+<article class="container body">
+  <p>別れて10日でも、半年でも、1年経っていても、夜の反応に名前をつけたい段階なら、それで十分です。<br>時間の長さも、整理がついているかどうかも、相談の入口とは関係ありません。</p>
+
+  <div class="cta-section">
+    <hr class="cta-rule">
+
+    <div class="cta-main">『相談』と、<br>このトーク画面に送ってください。</div>
+
+    <div class="cta-sub">2文字だけです。</div>
+
+    <!-- Decorative phone frame (static, non-interactive) -->
+    <div class="phone-frame" aria-hidden="true">
+      <div class="phone-bar">
+        <span>LINE</span>
+        <span>23:42</span>
+      </div>
+      <div class="phone-input">
+        <span>相談</span>
+        <span class="send">send →</span>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: var(--text-mute); text-align: center; margin-top: 8px; letter-spacing: 0.05em;">↑ これはイメージです。LINEのトーク画面に戻って『相談』と送ってください。</p>
+
+    <hr class="cta-rule">
+  </div>
+
+  <div class="cta-body">
+    <p>今夜このまま閉じても、たぶん明日の夜も、同じ時刻に、同じ場所で、同じことを考えています。</p>
+
+    <p>届いたら、こちらから鑑定書のサンプルをお送りします。<br>別の方の鑑定書（フィクションです）ですが、3層を組み合わせた読み方の輪郭がつかめると思います。</p>
+
+    <p>決済や予約のことは、まだ考えなくて大丈夫です。<br>今夜は読んだだけで疲れているなら、明日の朝、もう一度開いてください。<br>その時に2文字でいいです。</p>
+
+    <p>夜、スマホを伏せたあなたの反応を、<br>今度は私の側で読みます。</p>
+  </div>
+
+  <div class="signature-block">
+    <div class="signature">Kotoha</div>
+    <div class="signature-jp">ことは</div>
+  </div>
+</article>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="foot-brand">KOTOHA</div>
+  <div class="foot-line">Lead Magnet — 5フェーズの作動マップ</div>
+  <div class="foot-copy">© 2026 ことは</div>
+</footer>
+
+<script>
+  // Progress bar
+  const bar = document.getElementById('progressBar');
+  function updateBar() {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateBar, { passive: true });
+  window.addEventListener('resize', updateBar);
+  updateBar();
+</script>
+
+</body>
+</html>
