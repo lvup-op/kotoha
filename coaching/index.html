@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1ヶ月伴走パック ｜ ことは（愛着タロット）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --bg-sub: #f3efe8;
+    --text-main: #2d2a26;
+    --text-sub: #5c5650;
+    --text-mute: #9a9189;
+    --gold: #b89455;
+    --purple: #6b4e8d;
+    --gold-pale: #e8dcc4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: "Noto Sans JP", -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 2.1;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--gold);
+    z-index: 100;
+    transition: width 0.1s ease-out;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 24px 96px;
+    text-align: center;
+  }
+
+  .brand-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 14px;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 48px;
+    padding-left: 0.45em;
+  }
+
+  .moon-deco {
+    margin: 0 auto 56px;
+    display: block;
+  }
+
+  .hero-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 30px;
+    line-height: 1.7;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0 0 36px;
+    letter-spacing: 0.04em;
+    text-wrap: pretty;
+  }
+
+  .hero-sub {
+    font-family: "Noto Serif JP", serif;
+    font-size: 15px;
+    line-height: 1.95;
+    color: var(--text-sub);
+    font-weight: 400;
+    margin: 0 0 48px;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-rule {
+    width: 56px;
+    height: 1px;
+    background: var(--gold-pale);
+    margin: 0 auto 36px;
+    border: none;
+  }
+
+  .hero-meta {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px;
+    color: var(--text-sub);
+    letter-spacing: 0.12em;
+    line-height: 2;
+  }
+
+  .hero-meta .sep {
+    color: var(--gold-pale);
+    margin: 0 0.6em;
+  }
+
+  .hero-price {
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    color: var(--gold);
+    margin: 28px 0 12px;
+    letter-spacing: 0.06em;
+    line-height: 1.85;
+  }
+
+  .hero-price-tax {
+    font-size: 13px;
+    color: var(--text-sub);
+    letter-spacing: 0.06em;
+  }
+
+  .hero-price-card {
+    font-size: 14px;
+    color: var(--text-sub);
+  }
+
+  .hero-price-note {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 0.08em;
+    line-height: 1.85;
+  }
+
+  .body-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.2em;
+  }
+
+  .body-list li {
+    position: relative;
+    padding: 8px 0 8px 22px;
+    line-height: 1.95;
+  }
+
+  .body-list li::before {
+    content: "・";
+    color: var(--gold);
+    position: absolute;
+    left: 4px;
+    top: 8px;
+  }
+
+  .scroll-hint {
+    margin-top: 80px;
+    color: var(--gold);
+    font-size: 18px;
+    animation: bob 2.4s ease-in-out infinite;
+    opacity: 0.7;
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(6px); opacity: 0.9; }
+  }
+
+  /* Chapter Cover */
+  .chapter-cover {
+    padding: 96px 24px 72px;
+    text-align: center;
+  }
+
+  .chapter-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin: 0 0 32px;
+    letter-spacing: 0.08em;
+  }
+
+  .chapter-rule {
+    width: 36px;
+    height: 1px;
+    background: var(--gold-pale);
+    margin: 0 auto 32px;
+    border: none;
+  }
+
+  .chapter-title {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    line-height: 1.85;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 0 auto;
+    max-width: 480px;
+    letter-spacing: 0.02em;
+    text-wrap: pretty;
+  }
+
+  /* Body */
+  .body p {
+    margin: 0 0 2.2em;
+    color: var(--text-main);
+    text-wrap: pretty;
+  }
+
+  .body strong {
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .body h2 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.85;
+    color: var(--text-main);
+    margin: 88px 0 36px;
+    letter-spacing: 0.04em;
+  }
+
+  .body h3 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.85;
+    color: var(--text-main);
+    margin: 56px 0 24px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Quote loop */
+  .loop {
+    background: var(--bg-sub);
+    border-left: 3px solid var(--gold);
+    padding: 28px 28px 28px 32px;
+    margin: 40px 0;
+    font-family: "Shippori Mincho", "Noto Serif JP", serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 2.1;
+    color: var(--text-sub);
+    text-indent: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .loop p {
+    margin: 0 0 1.2em;
+    text-indent: 1.2em;
+  }
+
+  .loop p:last-child { margin-bottom: 0; }
+
+  .loop strong {
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  /* Phase ending hook */
+  .hook {
+    font-family: "Noto Serif JP", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 2.15;
+    color: var(--text-main);
+    margin: 56px 0 64px;
+    padding: 0 8px;
+    letter-spacing: 0.05em;
+    text-wrap: pretty;
+    text-align: center;
+  }
+
+  /* Pull quote in body */
+  .pull {
+    font-family: "Noto Serif JP", serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2.15;
+    color: var(--text-main);
+    margin: 48px 0;
+    padding: 0 4px;
+    letter-spacing: 0.05em;
+    text-wrap: pretty;
+  }
+
+  .pull strong {
+    font-weight: 700;
+  }
+
+  /* Fine rule */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--gold-pale);
+    margin: 56px auto;
+    width: 80%;
+  }
+
+  /* Table */
+  .table-scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 32px 0 16px;
+  }
+
+  .table-scroll-wrap .phase-table {
+    margin: 0;
+    min-width: 100%;
+  }
+
+  .phase-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0 16px;
+    font-size: 14px;
+  }
+
+  .phase-table th,
+  .phase-table td {
+    text-align: left;
+    padding: 18px 14px;
+    border-bottom: 1px solid var(--gold-pale);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    vertical-align: top;
+  }
+
+  .phase-table th {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 500;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .phase-table td:first-child {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 500;
+    color: var(--text-main);
+  }
+
+  .phase-table td {
+    color: var(--text-sub);
+    font-size: 13px;
+  }
+
+  .phase-table strong {
+    color: var(--text-main);
+    font-weight: 600;
+  }
+
+  /* Numbered list */
+  .num-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 32px;
+    counter-reset: numlist;
+  }
+
+  .num-list li {
+    counter-increment: numlist;
+    padding: 18px 0 18px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--gold-pale);
+    line-height: 1.95;
+    letter-spacing: 0.05em;
+  }
+
+  .num-list li:last-child { border-bottom: none; }
+
+  .num-list li::before {
+    content: counter(numlist);
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    line-height: 1;
+    font-weight: 400;
+  }
+
+  .num-list strong {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 500;
+    color: var(--text-main);
+    margin-right: 0.6em;
+  }
+
+  /* Layer boxes */
+  .layer {
+    border: 1px solid var(--gold-pale);
+    padding: 36px 28px 40px;
+    margin: 40px 0;
+    background: var(--bg);
+  }
+
+  .layer-head {
+    font-family: "Noto Serif JP", serif;
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 500;
+    margin: 0 0 20px;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .layer-head .layer-num {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-mute);
+    margin-right: 0.6em;
+    letter-spacing: 0.1em;
+  }
+
+  .layer p {
+    margin: 0 0 1.6em;
+    color: var(--text-main);
+  }
+
+  .layer p:last-child { margin-bottom: 0; }
+
+  .layer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.4em;
+  }
+
+  .layer ul li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    line-height: 1.95;
+    color: var(--text-main);
+  }
+
+  .layer ul li::before {
+    content: "・";
+    color: var(--gold);
+    position: absolute;
+    left: 4px;
+    top: 6px;
+  }
+
+  .layer ul li:last-child { margin-bottom: 0; }
+
+  .layer-price {
+    display: inline-block;
+    font-family: "Noto Serif JP", serif;
+    font-size: 13px;
+    color: var(--gold);
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: 1px solid var(--gold-pale);
+    letter-spacing: 0.06em;
+    background: var(--bg-sub);
+  }
+
+  .bridge {
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-size: 14px;
+    color: var(--text-sub);
+    margin: 32px 0;
+    letter-spacing: 0.05em;
+    font-style: italic;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 24px 0 24px;
+  }
+
+  .cta-rule {
+    border: none;
+    border-top: 1px solid var(--gold-pale);
+    margin: 48px auto;
+    width: 60%;
+  }
+
+  .cta-main {
+    font-family: "Noto Serif JP", serif;
+    font-size: 24px;
+    line-height: 1.85;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 32px 0 24px;
+    letter-spacing: 0.04em;
+    text-wrap: pretty;
+    text-align: center;
+  }
+
+  .cta-price {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    line-height: 1.85;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 24px 0 16px;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .cta-price-note {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    color: var(--text-sub);
+    text-align: center;
+    margin: 0 0 32px;
+    letter-spacing: 0.04em;
+  }
+
+  .cta-pay-button {
+    display: block;
+    text-align: center;
+    margin: 24px auto 16px;
+    padding: 18px 28px;
+    border: 1px solid var(--gold);
+    background: var(--bg);
+    font-family: "Noto Serif JP", serif;
+    font-size: 16px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    max-width: 480px;
+    word-break: break-all;
+  }
+
+  .cta-pay-note {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    color: var(--text-sub);
+    text-align: center;
+    margin: 0 0 32px;
+    line-height: 1.95;
+    letter-spacing: 0.04em;
+  }
+
+  .signature-block {
+    text-align: right;
+    margin-top: 64px;
+    padding-right: 8px;
+  }
+
+  .signature-jp {
+    font-family: "Noto Serif JP", serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--purple);
+    margin-top: 6px;
+    letter-spacing: 0.1em;
+  }
+
+  .signature-line {
+    font-family: "Noto Serif JP", serif;
+    font-size: 15px;
+    color: var(--text-sub);
+    text-align: right;
+    margin: 24px 0 8px;
+    letter-spacing: 0.05em;
+    font-style: italic;
+  }
+
+  .ps-line {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 13px;
+    color: var(--text-mute);
+    text-align: center;
+    margin: 32px 0 0;
+    line-height: 1.95;
+    letter-spacing: 0.04em;
+  }
+
+  .cta-section-h2 {
+    font-family: "Noto Serif JP", serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-main);
+    margin: 48px 0 32px;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .cta-section-subhead {
+    text-align: center;
+    font-family: "Noto Serif JP", serif;
+    font-size: 16px;
+    color: var(--text-main);
+    margin: 0 0 16px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 120px;
+    padding: 56px 24px 64px;
+    text-align: center;
+    border-top: 1px solid var(--gold-pale);
+  }
+
+  .foot-brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-left: 0.4em;
+  }
+
+  .foot-line {
+    font-family: "Noto Serif JP", serif;
+    font-size: 12px;
+    color: var(--text-sub);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .foot-copy {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 11px;
+    color: var(--text-mute);
+    letter-spacing: 0.1em;
+    margin-top: 14px;
+  }
+
+  /* Mobile tuning */
+  @media (max-width: 420px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 56px 22px 72px; }
+    .hero-title { font-size: 26px; }
+    .chapter-cover { padding: 72px 22px 56px; }
+    .chapter-num { font-size: 42px; }
+    .chapter-title { font-size: 20px; }
+    .body h2 { font-size: 20px; }
+    .body h3 { font-size: 17px; }
+    .cta-main { font-size: 22px; }
+    .cta-price { font-size: 20px; }
+    .phase-table { font-size: 13px; }
+    .phase-table th, .phase-table td { padding: 12px 8px; }
+    .layer { padding: 28px 22px 32px; }
+    .layer-head { font-size: 18px; }
+    .cta-pay-button { font-size: 14px; padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="brand-logo">KOTOHA</div>
+
+  <svg class="moon-deco" width="22" height="22" viewBox="0 0 22 22" fill="none">
+    <path d="M14.5 11a6 6 0 1 1-6.5-6 5 5 0 0 0 6.5 6z" stroke="#b89455" stroke-width="0.8" fill="none"/>
+  </svg>
+
+  <h1 class="hero-title">1ヶ月伴走パック</h1>
+
+  <p class="hero-sub">愛着タロット ｜ 鑑定書の続きではなく、変化を一緒に追う1ヶ月</p>
+
+  <hr class="hero-rule">
+
+  <div class="hero-meta">
+    ことは｜復縁専門タロット占い師
+    <span class="sep">／</span>
+    読了目安: 約20分
+  </div>
+
+  <div class="hero-price">¥50,000<span class="hero-price-tax">（銀行振込・税込）</span><br><span class="hero-price-card">／ ¥55,000（カード決済・税込）</span></div>
+  <div class="hero-price-note">約30日 ／ Notion納品 ／ テキスト完結 ／ 定員 月3名</div>
+
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- 2. 鑑定書を読み終わって、3日経った今のあなたへ -->
+<article class="container body" style="padding-top: 48px;">
+  <h2>鑑定書を読み終わって、3日経った今のあなたへ</h2>
+
+  <p>鑑定書、まだ手元にありますよね。</p>
+
+  <p>最初に読んだ時は、自分のことを言語化されすぎて、少し息が止まるような感覚があったと思います。2回目に読んだ時は、線を引きたくなる場所がたくさん見つかったんですよね。「これは保存して、何度も読み返そう」と決めた方もいるんじゃないでしょうか。</p>
+
+  <p>そして、3日経った今。</p>
+
+  <p>彼の状況がほんの少し動いて、「鑑定書のどこを引けばいいんだろう」と感じた瞬間がなかったでしょうか。あるいは、彼のSNSで小さな更新があって、「これは何を意味するんだろう」と読み返したけれど、鑑定書は時点の写真なので、その後の動きには答えてくれなかった。そんな瞬間が、もしかしたらあったかもしれないですね。</p>
+
+  <p>あるいはもう少し静かに、読んだ後の余韻が少しずつ薄れていくのを感じている方もいるんですよね。最初の3日は、毎日鑑定書を開いていた。今週に入って、開く回数が少しずつ減ってきた。「忘れたわけじゃないけど、最初の温度感が薄れていくのを止められない」その感覚なんです。</p>
+
+  <p>正直に言いますね。鑑定書を読んだ直後の温度は、たぶんあと数日で半減します。「あの読みをもう一度動画で読み直したいな」と気づいた時には、最初の温度感に戻る道筋が、自分でもわからなくなっていることがあるんです。</p>
+
+  <p>鑑定書を読み終えた後、ふと、<strong>「これは今日の私の3層構造の写真だな」</strong>って感じませんでしたか。</p>
+
+  <p>写真は強い装置です。でも、写真は止まっています。</p>
+
+  <p>あなたと彼が30日の間に動いていく動画を、誰かが撮ってくれる装置があったら。あの3層構造を、変化していく状況に対して何度も引き直してくれる人がいたら。鑑定書を読んだ夜の温度を、3日後にも、2週間後にも、1ヶ月後にも、誰かと一緒に保ってくれる場所があったら。</p>
+
+  <p>そう思った夜があるとしたら、その装置の話をします。</p>
+
+  <p class="pull"><strong>要点:</strong> 鑑定書は時点の写真。変化を撮り続ける動画装置が、1ヶ月伴走です。</p>
+</article>
+
+<hr class="rule">
+
+<!-- 3. 今、あなたの目の前にある選択肢 -->
+<article class="container body">
+  <h2>今、あなたの目の前にある選択肢</h2>
+
+  <p>鑑定書を受け取った後の方が、頭の中で並べていることが多い選択肢を、先に整理させてください。</p>
+
+  <div class="table-scroll-wrap">
+    <table class="phase-table">
+      <thead>
+        <tr><th>選択肢</th><th>得るもの</th><th>失うもの</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>① ここで終わる</td><td>¥5,000で完結。鑑定書1冊を生涯の手元に</td><td>30日の動きへの引き直しが自分一人になる</td></tr>
+        <tr><td>② 変化を一緒に追う</td><td>30日の動きを3層で読み続けられる</td><td>¥50,000・1ヶ月のコミット</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>「鑑定書をまた1回頼む」という第3の道もありますが、それは1ヶ月の伴走とは構造的に別物です。詳しくはこの後の章で書きました。</p>
+
+  <p>このページがご案内するのは、2つ目の道です。</p>
+
+  <p>①を否定するためではありません。2つ目の選択肢があることを、知らないまま消える方がいるのが、もったいないからです。</p>
+</article>
+
+<hr class="rule">
+
+<!-- CHAPTER I -->
+<section class="chapter-cover">
+  <div class="chapter-num">I</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">1ヶ月伴走とは何か</h2>
+</section>
+
+<article class="container body">
+  <p>ある時点の鑑定書ではなく、30日の動きを3層で読み続ける仕組みです。</p>
+
+  <p>タロット5枚の読み、愛着理論による2人のダイナミクス、西洋占星術の出生図とトランジット。あの3つの層を、1枚の鑑定書ではなく、1ヶ月分の動きの中で何度も重ねて読み直す装置だと思ってください。</p>
+</article>
+
+<hr class="rule">
+
+<!-- 5. 鑑定書1冊だけでは届かないところ -->
+<article class="container body">
+  <h2>鑑定書1冊だけでは届かないところ</h2>
+
+  <p>ここから少し、¥5,000の鑑定書では物理的に届かないところの話をします。</p>
+
+  <p>正直に言いますね。鑑定書を批判する話ではなくて、<strong>設計上の射程</strong>の話なんです。</p>
+
+  <p>鑑定書は、「ある時点の3層構造の読み」として書きました。あなたと彼の「今ここ」を、私が出せる最大の解像度で言語化する装置です。だから1冊で完結する設計になっています。</p>
+
+  <p>ただ、これは時点の読みであって、変化の読みではないんですよね。</p>
+
+  <p>1〜2週間で、こういうものが動きます。</p>
+
+  <ul class="body-list">
+    <li>彼の状況。SNSで小さな変化が起きる。共通の知人から話が聞こえてくる。彼から軽い接触が来る、あるいは止まる</li>
+    <li>あなたの作動。引き金が引かれた後で、不安が高い時の反応がどう変わったか、回避が高い時の反応がどう変わったかが更新される</li>
+    <li>星も動きます。金星は約24日で1サイン進みます。トランジットは確実に変わっていきます</li>
+  </ul>
+
+  <div class="table-scroll-wrap">
+    <table class="phase-table">
+      <thead>
+        <tr><th>単発の鑑定書</th><th>1ヶ月伴走</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ある時点の3層構造を、最大解像度で言語化</td><td>30日の動きを3層で読み続ける</td></tr>
+        <tr><td>読み返せる文書として手元に残る</td><td>読み返せる文書が4-6本、手元に積み上がっていく</td></tr>
+        <tr><td>状況が動いた後の引き直しは自分一人</td><td>動いた瞬間に、私が一緒に引き直す</td></tr>
+        <tr><td>1冊で完結</td><td>30日の連続記録として残る</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>ここで、もうひとつ正直に書いておきますね。</p>
+
+  <p>「鑑定書を1ヶ月後にもう1回頼めばいいかも」と思った方が、たぶんいると思います。私も¥5,000の鑑定書を書く側として、その選択肢があってもいいと考えています。ただ、ひとつだけ伝えておきたいのは、<strong>単発の鑑定書を繰り返すことと、1ヶ月の伴走は、全く別物</strong>だということなんです。</p>
+
+  <p>単発の鑑定書は、ある時点の3層構造を最大解像度で撮った写真です。これを1ヶ月後にもう1枚、3ヶ月後にもう1枚撮ったとしても、写真が3枚並ぶだけで、動画にはなりません。動画というのは、写真と写真の「間」に何が起きていたかを、連続軸として記録するもののことなんですよね。</p>
+
+  <p>状況が動いた瞬間に「鑑定書のどこを引けばいいんだろう」と感じる、あの瞬間。あれは、写真の間の動きを誰も記録していないから起きるんです。そして、単発をもう1回頼みたくなる衝動そのものが、半年30万円の占いジプシーループの再起動と同じ形をしています。</p>
+
+  <p>単発の鑑定書はとても強い装置です。でも、状況が動く30日を一緒に追っていく装置とは、別物なんですよね。</p>
+
+  <p>時点の読みを、変化の読みに引き直す装置が、必要なときがあるんです。</p>
+
+  <p>そしてそのタイミングは、鑑定書を読んだ直後の、今この瞬間がいちばん近いんですよね。</p>
+</article>
+
+<hr class="rule">
+
+<!-- CHAPTER II -->
+<section class="chapter-cover">
+  <div class="chapter-num">II</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">1ヶ月で起きること</h2>
+</section>
+
+<article class="container body">
+  <p>30日の中で、私があなたに納品するもの、と、書いている時間の物理量を、ぜんぶ書き出します。</p>
+
+  <p>「これだけのものが、本当に¥50,000で来るのか」を、判断材料を出した上で考えていただきたいので。</p>
+</article>
+
+<hr class="rule">
+
+<!-- 7. 中身の7要素 -->
+<article class="container body">
+  <h2>中身の7要素</h2>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">01</span>月初フル鑑定書 1回（10,000字・5枚展開・3層フル）</div>
+    <p>契約初日から5〜7日以内に、Notion共有ページで納品します。</p>
+    <p>¥5,000のフル鑑定書と<strong>同じ深度・同じボリューム</strong>の鑑定書を、月初の状況に対して新しく書きます。あなたが手元にお持ちの鑑定書を読み終えた時の感覚を、もう一度。</p>
+    <p>業務時間の内訳は、タロットドロー、出生図と最新トランジットのリサーチ、3層を統合した執筆、Notion整形まで含めて約100分。文字数は10,000字。タロットは5枚展開（過去・現在・未来・障害・アドバイス）で、月初の3層構造を最大解像度で読み直します。</p>
+    <p>先月の鑑定書から状況が動いた方の場合、月初フル鑑定書には「先月の鑑定からの差分」を冒頭に置いて、新しいカードと新しい星の動きで読み直します。先月見えていた構造のうち、どこが進んだのか、どこは留まっているのか、どこに新しい変数が入ったのかを、ぜんぶ言語化した上で、その月の30日をどう読むかの起点を作ります。</p>
+    <span class="layer-price">単品なら ¥10,000相当</span>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">02</span>週次レポート 3〜4回（各3,000字）</div>
+    <p>月初鑑定から1週間ごとに、状況更新を伺って、必要ならカードを引き直して、3,000字でレポートします。</p>
+    <p>業務時間は1本あたり45〜60分。3.4本平均で、月に180〜240分。</p>
+    <p>「1週間で起きた揺れ」「彼の小さな動きの読み」「あなたの作動の更新」を、5フェーズのどこで作動しているかという<strong>機能名</strong>で読み続けられるようになります。「不安が高い時の反応がこの1週間でどう動いたか」「回避が高い時の反応がどこに出たか」「金星のトランジットがどこに当たって、関係性に何が起きていたか」を、週単位で重ねていく作業です。</p>
+    <p>読み返せる文書として、月の終わりには4本のレポートが手元に積み上がります。月初の鑑定書と合わせると、その月のあなたと彼の関係性が、20,000字以上の連続記録として、Notion上に残ります。</p>
+    <span class="layer-price">各¥3,000相当 = ¥9,000〜12,000相当</span>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">03</span>質問対応 月4回</div>
+    <p>週ごとのレポートに、その週の質問への回答を織り込みます。</p>
+    <p>個別チャットでの即レスではなく、<strong>次のレポートに統合する形式</strong>です。即レスの方が便利だと感じる方もいると思いますが、私の側に「カードを引いて、星を確認して、3層を統合する時間」が必要なので、そこは譲っていません。</p>
+    <p>夜中3時に湧いた彼への不安や、急に動いたSNSへの揺れを、通話の予約待ちで冷ましてしまわずに、その瞬間に書き残せるのは、テキスト伴走だからこそできることなんですよね。</p>
+    <span class="layer-price">¥1,500×4 = ¥6,000相当</span>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">04</span>緊急鑑定チケット 月1回</div>
+    <p>彼から急に連絡が来た。SNSが大きく動いた。第三者の影が見えた。重大な動きがあった時に使ってください。</p>
+    <p>週次サイクルとは別枠で、48時間以内に<strong>3,000〜4,000字の</strong>簡易鑑定書を返します。1回あたり60〜90分の業務時間です。</p>
+    <p>「これは緊急に該当しますか?」と先に申告いただいたら、私が「該当しますね」と確認してから稼働します。乱発防止と、本当に必要な時の即応のための、運用ルールです。</p>
+    <span class="layer-price">¥5,000相当</span>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">05</span>月末再鑑定書 1回（8,000〜10,000字・フル品質）</div>
+    <p>1ヶ月の終わりに、最初の鑑定からどう動いたかを追跡する再鑑定書を書きます。</p>
+    <p>業務時間は60〜90分、字数は8,000〜10,000字。月初の鑑定書では見えなかった、<strong>動きの読み</strong>が初めて立ち上がる場所です。1ヶ月分のStage進行ロードマップ（Stage 1-4のどこからどこへ動いたか、あるいは動かなかったか）も、ここに記録されます。</p>
+    <p>「先月のあなたと、今月のあなたで、何が変わったか」を、3層で言語化します。状況が動いた方には、その動きが何を意味するかの読みを。状況が動かなかった方には、動かなかったことが何を意味するかの読みを。動きの有無で読みの密度が変わらない設計です。</p>
+    <span class="layer-price">¥10,000相当</span>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">06</span>クロージング 1回</div>
+    <p>月末再鑑定書とセットで、ここから先の30日をどう動くかの指針をお渡しします。</p>
+    <p>継続するか、ここで一区切りにするかも、一緒に考えます。「続けてください」とは言いません。「ここで一区切り」を選んだ方には、その先の30日を自分で歩くための指針をお渡しして終わります。</p>
+    <p>業務時間は約30分、字数は1,500〜2,000字の指針をお渡しします。</p>
+    <span class="layer-price">¥3,000相当</span>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head"><span class="layer-num">07</span>既読リードマグネット 13,410字</div>
+    <p>公式LINEで配布している3層モデルの入口の記事を、すでにお読みいただいている前提で進めます。</p>
+    <p>本伴走で使う言語体系（3層、5フェーズ、機能名置換）は、あの記事に準拠します。「読み直さなくていいの?」と思った方も、月初の鑑定書を受け取った時に、自然と該当箇所が立ち上がる作りになっています。</p>
+    <span class="layer-price">既読の価値計上</span>
+  </div>
+</article>
+
+<hr class="rule">
+
+<!-- 8. 3層モデルが、1ヶ月の動きの中で重なるということ -->
+<article class="container body">
+  <h2>3層モデルが、1ヶ月の動きの中で重なるということ</h2>
+
+  <div class="loop">
+    <p>あの3層を、1枚の鑑定書ではなく、1ヶ月の動きで重ねて読みます。</p>
+    <p>カードは週ごとに引き直される。彼の気持ちは1〜2週間で動く。あなたの作動も、引き金が引かれた後で更新される。そして星も動く。金星は約24日で1サイン進みます。</p>
+    <p>時点の3層が、変化の3層になる。これが1ヶ月伴走です。</p>
+  </div>
+
+  <p>鑑定書を読んだ時に体験した「カードと星と愛着理論が、別々の3つを言ってるようで全部同じことの別の表現だった」あの感覚を、覚えていらっしゃるんじゃないでしょうか。</p>
+
+  <p>1ヶ月伴走では、その重なりが、変化していく状況に対して何度も適用されます。</p>
+
+  <p>週次レポートで「今週、この方向に動いた」をカードで読み直す。月の中盤で「彼の月星座にトランジットが当たる時期」を星で確認する。そして月末再鑑定書で、「不安が高い時の反応がこの30日でどう変わったか」を愛着理論の機能で言語化する。</p>
+
+  <p>たとえばある週、彼から急に「元気?」のLINEが来たとします。鑑定書だけだと、それを「これは何のサインなんだろう」と一人で抱えることになります。1ヶ月伴走では、その「元気?」を、その週の彼の星のトランジット、その時期のあなたの作動、そして直前のカードの読みと重ねて、3層で意味を言語化します。同じ「元気?」でも、彼の側のどの作動から出てきたのかで、読みが変わります。</p>
+
+  <p>鑑定書を読んだ時に、「重い、じゃなくて、深く愛した」のような言葉の翻訳が起きたんじゃないかなと思います。「動かないことが、初めて動かす」という、自分一人だと到達できなかった逆説が見えた瞬間が、あったかもしれません。</p>
+
+  <p>1ヶ月の伴走では、その翻訳と逆説が、変化していく状況に対して何度も起こります。彼から「元気?」が来た夜に、その「元気?」を「気にならないふりが限界に来た瞬間」と翻訳する。あなたが連絡を返したくなる衝動を、「半年のループの再起動の徴候」と読み替える。週ごとに、月ごとに、新しい翻訳が立ち上がります。</p>
+
+  <p>そして、状況が動かない週もあります。彼から連絡が来ない週、SNSが止まっている週、自分の作動も静かな週。そういう週には、「動かないこと」を3層で読み直します。動いていないように見える時に何が水面下で動いているか、を読むのが、伴走でしか出せない読みなんですよね。</p>
+
+  <p><strong>3層が時点で重なるのではなく、3層が30日の連続軸の中で何度も重なります。</strong></p>
+
+  <p>これが、伴走でしか出せない読みです。</p>
+</article>
+
+<hr class="rule">
+
+<!-- CHAPTER III -->
+<section class="chapter-cover">
+  <div class="chapter-num">III</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">私が伴走できること、できないこと</h2>
+</section>
+
+<article class="container body">
+  <p>¥5,000の鑑定書でも書きましたが、ここでもう一度、丁寧に書かせてください。<strong>1ヶ月の伴走でいちばん核心の話</strong>になります。</p>
+
+  <div class="layer">
+    <div class="layer-head">ひとつ。私が約束しないこと</div>
+    <p>「絶対に復縁する」「必ず関係が改善する」は約束しません。</p>
+    <p>ハッキリ言います。私が読んでいるのは、あなたと彼の今の3層構造であって、未来を確定させる装置ではないんですよね。</p>
+    <p>この30日で、状況が動く方もいれば、動かない方もいます。動いたとしても、元の関係に戻る形なのか、新しい関係に組み直される形なのかは、最初からは決まっていません。1ヶ月後にあなたが「続けたい」と感じるか「ここで一区切り」と感じるかも、今は決まっていません。</p>
+    <p>そこは私が決められないところで、あなたが決めるところでもなく、二人の3層が決めるところです。私の仕事は、決まる前の構造を最大解像度で言語化することと、決まっていく過程を一緒に追うこと。決めることそのものは、私の仕事ではありません。</p>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head">ふたつ。あなたが決めることと、私が一緒に見ることの境界</div>
+    <p>動くタイミングと待つタイミングは私が一緒に見ますが、動くか待つかを決めるのはあなた自身です。</p>
+    <p>「彼に連絡していいですか?」「LINE既読のまま3日経ちました、何か送るべきですか?」</p>
+    <p>こういう問いに、私は「Aの方が動きやすいタイミング・Bの方が待つべきタイミング」の判断材料は出しますが、<strong>最後の引き金はあなたが引きます</strong>。</p>
+    <p>そして引き金を引いた後、起きたことに対しては、3層を引き直して一緒に読みます。</p>
+  </div>
+
+  <div class="layer">
+    <div class="layer-head">みっつ。1ヶ月で結論が出ない可能性</div>
+    <p>1ヶ月で結論が出ないこともあります。</p>
+    <p>そういう時は、別の選択肢も一緒に考えますが、こちらから押し売りはしません。「もう少し長く追いたい」と能動的に感じた方とだけ、月末のクロージングで次の30日の選択肢を考えます。「ここで一区切りにする」と決めた方には、月末再鑑定書とクロージングで、その先の30日を自分で歩くための指針をお渡しして終わります。</p>
+  </div>
+
+  <h3>占いジプシーだった頃の私から</h3>
+
+  <p>私自身、25歳で振られたあと、毎月3〜5万円を電話占いに使って、「彼はまだあなたを想ってます」を<strong>6人の占い師から聞き続けた時期</strong>があります。半年で30万円以上、占いに使いました。</p>
+
+  <p>あなたが鑑定書の中で「複数の占い師の読みが食い違っていた時期」のところを読んだ時、「同じことを6人分繰り返してきた誰かが、ここにいる」と感じてもらえたら嬉しいです。</p>
+
+  <p>あの頃、どの占い師も「保証」をしてくれました。「○月までに連絡が来ます」「絶対に戻ります」と言ってもらった夜は、安心して眠れたんです。</p>
+
+  <p>でも保証された30分が終わると、翌朝にはまた同じ不安に戻りました。電話を切った瞬間に、別の占い師の番号を調べていた時期もあります。</p>
+
+  <p>あれは、誠実な装置じゃなかったんです。</p>
+
+  <p>「保証されたのに不安が消えない」のは、保証が嘘だったからじゃなくて、保証されただけでは構造が見えないからだったんですよね。</p>
+
+  <p>¥5,000の鑑定書の中でも書きましたが、「カードが厳しいことを言ったら、それも正直に伝える」という前置きを毎回入れています。1ヶ月の伴走でも、その前置きはずっと有効です。</p>
+
+  <p>未来は確定させられない。</p>
+
+  <p>でも、今この瞬間の3層構造を、最大の解像度で言語化することと、それが30日の動きの中でどう変わるかを一緒に追うことは、私が引き受けられる仕事なんです。</p>
+
+  <p class="hook">保証されないことに、誠実さがあるんです。</p>
+</article>
+
+<hr class="rule">
+
+<!-- CHAPTER IV -->
+<section class="chapter-cover">
+  <div class="chapter-num">IV</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">ご一緒した方の声</h2>
+</section>
+
+<article class="container body">
+  <p>ここに並べるのは、¥5,000の鑑定書を受け取って、紹介への掲載をご快諾いただいた方の声です。お名前・年齢・お住まいなどご本人を特定できる情報は別の表現に差し替えています。</p>
+
+  <h3>20代女性 / 復縁</h3>
+
+  <div class="loop">
+    <p>他の先生方も心に寄り添ってくれて嬉しかったんですが、なかなか不安が消えませんでした。ことはさんは占いと心理学の裏付けで、性格や、自分が動けるような時期まで明確化してくれて、自分の動きが見えてとても納得できる鑑定でした。</p>
+  </div>
+
+  <h3>30代女性 / 曖昧な関係</h3>
+
+  <div class="loop">
+    <p>他の占いと違ったのは、分かりやすく表にしてくれるところでした。希望的観測で鑑定される方が多い中で、ことはさんは抽象的な話ではなく、リアルに構造を分析して、星読みとカードで確認してくれた印象です。<strong>感情じゃなくて構造で教えてくれる</strong>。友達に説明するならそう伝えると思います。</p>
+  </div>
+
+  <p>¥5,000の鑑定書を受け取った方々と話す中で、「状況が動いた時に、また3層で引き直してくれる場所があったら」と感じる瞬間が、私自身の側にもありました。1冊で完結する設計だからこそ、続けて読み続けたくなった方が、次に立ち寄れる場所がなかったんですよね。</p>
+
+  <p>鑑定書1冊で完結する方もいます。それは私にとって、その方の人生に1冊の鑑定書が残せた、という意味で十分嬉しいことなんです。ただ、「もう少し長く読み続けたい」と感じてくれる方の側に、その場所がほしかった。だから伴走パックを設計しました。</p>
+</article>
+
+<hr class="rule">
+
+<!-- 11. 30日のタイムライン -->
+<article class="container body">
+  <h2>30日のタイムライン</h2>
+
+  <p>30日の流れを時系列で並べると、こうなります。</p>
+
+  <div class="table-scroll-wrap">
+    <table class="phase-table">
+      <thead>
+        <tr><th>期間</th><th>起きること</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Day 1〜7</td><td>月初フル鑑定書 1本（10,000字・3層フル）をNotion納品</td></tr>
+        <tr><td>Day 8〜14</td><td>週次レポート 1本（3,000字）+ 質問対応</td></tr>
+        <tr><td>Day 15〜21</td><td>週次レポート 1本（3,000字）+ 質問対応</td></tr>
+        <tr><td>Day 22〜28</td><td>週次レポート 1本（3,000字）+ 緊急鑑定（必要時）</td></tr>
+        <tr><td>Day 29〜30</td><td>月末再鑑定書 + クロージング</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>30日のうち、緊急鑑定チケットは「重大な動きが起きた時」に使ってください。彼から連絡が来た、SNSが動いた、別れ話があった、というような時です。週次サイクルとは別枠で、48時間以内に簡易鑑定書を返します。</p>
+
+  <p>月の中盤あたりから、「先週のレポートと、その前のレポートで、何が変わったか」が連続軸として見えてきます。1週ごとの単発の読みではなく、<strong>3層が動いている軌跡</strong>として、Notion上に立ち上がってきます。これが、月末再鑑定書で「動きの読み」を出すための土台になります。</p>
+
+  <p>3週目に入る頃には、Notion上に立ち上がる連続記録が、読み返したくなる物量になってきます。月初の鑑定書を「これは今月の起点だった」と振り返る瞬間が、月末再鑑定書を書く準備期間でもあるんですよね。</p>
+</article>
+
+<hr class="rule">
+
+<!-- 12. 業務量の透明性 -->
+<article class="container body">
+  <h2>業務量の透明性</h2>
+
+  <p>正直に書いておきます。</p>
+
+  <p>私が1人で、すべての鑑定書とレポートを書いています。タロットを引くのも、出生図を出すのも、トランジットを確認するのも、3層を統合して読みを組み立てるのも、最後に文章として整えるのも、ぜんぶ私が手を動かしています。</p>
+
+  <p>1ヶ月の伴走で、6.5時間から10.5時間の作業時間を、お一人の方に使います。</p>
+
+  <div class="table-scroll-wrap">
+    <table class="phase-table">
+      <thead>
+        <tr><th>業務</th><th>時間</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>月初フル鑑定書</td><td>約100分</td></tr>
+        <tr><td>週次レポート ×3〜4本</td><td>180〜240分</td></tr>
+        <tr><td>質問対応（レポートに織込み）</td><td>60〜120分</td></tr>
+        <tr><td>緊急鑑定チケット（月1回）</td><td>60〜90分</td></tr>
+        <tr><td>月末再鑑定書</td><td>60〜90分</td></tr>
+        <tr><td>クロージング</td><td>約30分</td></tr>
+        <tr><td><strong>合計</strong></td><td><strong>6.5〜10.5時間／月</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>3名で19.5〜31.5時間。これに鑑定書¥5,000の方の納品、サブスク継続の方への鑑定書、自分自身の学びの時間を足すと、月の作業上限が見えてきます。</p>
+
+  <p class="pull"><strong>だから、定員は月3名です。</strong></p>
+
+  <p>煽りで「限定」と言っているのではなく、品質を保てる物理上限が、たまたま月3名なんです。</p>
+
+  <p>お申込み順での先着3名でお受けしています。今月分が埋まると、次月分の受付までお待ちいただくことになります。次月分は前月25日頃から受付開始です。</p>
+</article>
+
+<hr class="rule">
+
+<!-- 13. 価格の根拠 -->
+<article class="container body">
+  <h2>価格の根拠</h2>
+
+  <p>中身をぜんぶお見せした後で、単品で頼んだ場合の参考価格を並べます。</p>
+
+  <div class="table-scroll-wrap">
+    <table class="phase-table">
+      <thead>
+        <tr><th>要素</th><th>単品で頼んだ場合</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>月初フル鑑定書（10,000字・3層フル）</td><td>¥10,000相当</td></tr>
+        <tr><td>週次レポート ×3〜4回（各3,000字）</td><td>¥9,000〜12,000相当</td></tr>
+        <tr><td>質問対応 月4回</td><td>¥6,000相当</td></tr>
+        <tr><td>緊急鑑定チケット 月1回</td><td>¥5,000相当</td></tr>
+        <tr><td>月末再鑑定書（フル品質）</td><td>¥10,000相当</td></tr>
+        <tr><td>クロージング 1回</td><td>¥3,000相当</td></tr>
+        <tr><td>既読リードマグネット 13,410字</td><td>¥0（既読の価値計上）</td></tr>
+        <tr><td><strong>合計相当価格</strong></td><td><strong>¥43,000〜46,000相当</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>¥43,000〜46,000相当の納品物に、伴走価値（連続関与・状況追跡・即応性）として¥4,000〜7,000を乗せて、¥50,000です。</p>
+
+  <p>伴走価値の中身は、「変化していく状況に対して、その瞬間に書き残せる相手がいる」「次のレポートまでに私が3層を引き直して待っている」「30日の連続記録として手元に残る」の3つです。これらは、単発の鑑定書を何回お渡ししても出てこない価値です。連続関与だからこそ立ち上がる読みであり、即応だからこそ拾える瞬間の3層です。</p>
+
+  <p class="pull"><strong>¥4,000〜7,000の伴走プレミアムを乗せて、¥50,000です。</strong></p>
+
+  <p>価格は最初にお伝えしました。それでもここまで読んでいただいたのは、業務量と中身を見ていただいた後で、もう一度「¥43,000〜46,000相当を¥50,000で」のかたちで自分の中で照合してもらえたら、と願っているからなんです。「¥50,000は大きい」という第一印象を、業務量・中身・3層の延長・保証しないスタンス・顧客の声を全部見ていただいた上で、もう一度自分の中で照合する。その時間を、ここまでの章で持っていただきたかったんです。</p>
+</article>
+
+<hr class="rule">
+
+<!-- CHAPTER V -->
+<section class="chapter-cover">
+  <div class="chapter-num">V</div>
+  <hr class="chapter-rule">
+  <h2 class="chapter-title">お申込み</h2>
+</section>
+
+<article class="container body">
+  <h3>お申込みから納品までの流れ</h3>
+
+  <ol class="num-list">
+    <li>お申込み・決済（カード決済 または 銀行振込）</li>
+    <li>公式LINEから契約開始のご連絡を私から差し上げます</li>
+    <li>5〜7日以内に月初フル鑑定書をNotion共有ページで納品</li>
+    <li>1週間ごとに週次レポートを納品（質問はレポートに織込み）</li>
+    <li>月末に再鑑定書とクロージングを納品</li>
+  </ol>
+
+  <h3>こんな方に向いています</h3>
+
+  <div class="layer">
+    <ul>
+      <li>¥5,000のフル鑑定書を受けて、もっと深く、長く付き合いたいと感じた方</li>
+      <li>状況の変化を一人で抱え続けるのが辛くなってきた方</li>
+      <li>テキストでじっくりやりとりするのが合う方（文章として残るので、何度でも読み返せます）</li>
+      <li>占い師をはしごし続ける関係から、いったん降りたいと感じている方</li>
+      <li>結論を急がず、30日の動きを構造で読んでいきたい方</li>
+    </ul>
+  </div>
+
+  <h3>こんな方には合いません</h3>
+
+  <div class="layer">
+    <ul>
+      <li>「絶対復縁」「必ず戻る」の保証を求めている方</li>
+      <li>24時間即レスを期待している方（質問は次のレポートに織り込みます）</li>
+      <li>通話・対面・Zoomでのやりとりを希望している方（テキスト完結）</li>
+      <li>配偶者の方や第三者の特定情報（名前・職業・SNS等）を共有したい方</li>
+    </ul>
+  </div>
+
+  <p>別れて何ヶ月か、復縁の段階がどこかは、特に問いません。「鑑定書を受けた時の温度と同じ熱量で1ヶ月読み続けてほしい」と感じた方なら、状況に関係なく合います。</p>
+
+  <h3>注意事項</h3>
+
+  <div class="layer">
+    <ul>
+      <li>納品後の返金はお受けできません（契約開始後のキャンセル不可）</li>
+      <li>配偶者・第三者の特定情報（名前・職業・SNS等）はお取り扱いしません</li>
+      <li>通話・対面・Zoomは含まれません（テキスト完結）</li>
+      <li>本サービスは断定的な未来予言ではなく、現状を3層で読み、次の30日の運用指針を返すものです</li>
+      <li>ご請求はLevel up Operations名義で発生します</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="rule">
+
+<!-- 15. 鑑定書の余韻が消える前に + 末尾CTA -->
+<article class="container body">
+  <h2>鑑定書の余韻が消える前に</h2>
+
+  <p>鑑定書を読んだ直後の、この感覚は、たぶんあと数日で薄れていきます。</p>
+
+  <p>毎日開いていた鑑定書の、開く回数が少しずつ減っていく。線を引いた場所を見返す機会が、生活の中で押し流されていく。「あの時の温度感に、また戻りたいな」と気づいた時には、もう、戻り方がわからなくなっていることがあるんです。</p>
+
+  <p>写真として残った3層構造を、もう一度動画として読み直したい、という気持ちが残っているなら。</p>
+
+  <p>そして、その動画を1人で読み続けるより、誰かと一緒に読み続けたい、と感じるなら。</p>
+
+  <p>この30日の伴走は、そのために用意した装置です。</p>
+
+  <p class="hook">鑑定書の余韻が消える前に。</p>
+</article>
+
+<section class="cta-section container body">
+  <div class="cta-price">1ヶ月伴走パック ¥50,000</div>
+  <p class="cta-price-note">¥43,000〜46,000相当の納品 + 伴走プレミアム</p>
+
+  <hr class="cta-rule">
+
+  <h2 class="cta-section-h2">お申込み</h2>
+
+  <p class="cta-section-subhead"><strong>カード決済で申し込む</strong></p>
+  <p class="cta-price-note">¥55,000・税込・手数料込み</p>
+
+  <a href="{MOSH_50K_URL}" class="cta-pay-button">お申し込みはこちら（カード決済）</a>
+
+  <hr class="cta-rule">
+
+  <p class="cta-pay-note">カード決済が難しい場合は、銀行振込（¥50,000・税込・着金確認後に契約開始）もお受けしています。<br>LINEで「<strong>1ヶ月伴走希望</strong>」とお送りください。振込先をご案内します。</p>
+
+  <p class="cta-pay-note"><strong>納品: 契約開始から5〜7日以内に月初フル鑑定書をNotionで納品。<br>以降1週間ごとに週次レポート。</strong></p>
+
+  <p class="cta-pay-note"><strong>定員: 月3名</strong>（次月分は前月25日頃から受付開始）</p>
+
+  <hr class="cta-rule">
+
+  <p class="ps-line">1ヶ月の伴走が終わるとき、もし状況の動きが大きくて、もう少し長く一緒に追っていきたいと感じる方もいらっしゃいます。<br>そういう方とは、月末のクロージングで次の30日の選択肢を一緒に考えます。押し売りはしません。</p>
+
+  <div class="signature-block">
+    <div class="signature-line">あなたが、自分の足で立てる夜が増えますように。</div>
+    <div class="signature-jp">ことは</div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-brand">KOTOHA</div>
+  <div class="foot-line">復縁専門タロット占い師</div>
+  <div class="foot-copy">© Level up Operations</div>
+</footer>
+
+<script>
+  // Progress bar
+  const bar = document.getElementById('progressBar');
+  function updateBar() {
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (scrolled / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateBar, { passive: true });
+  window.addEventListener('resize', updateBar);
+  updateBar();
+</script>
+
+</body>
+</html>
