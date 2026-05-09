@@ -67,6 +67,17 @@
     font-weight: 400;
     letter-spacing: 0.04em;
     -webkit-font-smoothing: antialiased;
+    word-break: auto-phrase;
+    line-break: strict;
+    overflow-wrap: anywhere;
+  }
+
+  /* Pretty wrap for headings and emphasis */
+  .hero-title, .hero-sub, .chapter-title,
+  .body h2, .body h3, .body p, .pull, .hook,
+  .loop p, .testimonial-head, .testimonial-body,
+  .cta-block-headline, .compass-row .yes, .faq-q {
+    text-wrap: pretty;
   }
 
   .progress-bar {
